@@ -21,12 +21,12 @@ export default function Hero({ gymName, phone, city }: HeroProps) {
           {gymName} Gym in {city} offers a safe and modern fitness space for both men and women. With separate areas, expert trainers, and affordable plans, it's the perfect place for cardio, strength training, and weight loss. Join now to start your fitness journey!
         </p>
         <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-          <Link className="w-full sm:w-auto" href={"/contact-us"}>
+          <Link className="w-full sm:w-auto" href={`/contact-us?name=${encodeURIComponent(gymName)}&city=${encodeURIComponent(city)}&phone=${encodeURIComponent(phone)}`}>
             <Button className="w-full sm:w-auto bg-background hover:bg-background text-foreground hover:animate-pulsing hover:animate-iteration-count-infinite" size="lg">
               Contact Us <ArrowUpRight className="h-5! w-5!" />
             </Button>
           </Link>
-          <a className="w-full sm:w-auto" href={`tel:${phone}`}>
+          <a className="w-full sm:w-auto" href={`tel:+${phone}`}>
             <Button
               className="w-full sm:w-auto shadow-none text-white bg-transparent  "
               size="lg"

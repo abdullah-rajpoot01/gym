@@ -10,6 +10,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { useSearchParams } from "next/navigation";
+import { createQuery } from "@/lib/create-query";
 
 export const NavMenu = (props: ComponentProps<typeof NavigationMenu>) => {
   const searchParams = useSearchParams();
@@ -22,27 +23,27 @@ export const NavMenu = (props: ComponentProps<typeof NavigationMenu>) => {
     <NavigationMenuList className="space-x-0 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start data-[orientation=vertical]:justify-start">
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-          <Link href={`/?name=${gymName}&city=${city}&phone=${phone}`}>Home</Link>
+          <Link href={`/${createQuery({ gymName, city, phone })}`}>Home</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-          <Link href={`/?name=${gymName}&city=${city}&phone=${phone}#why-us`}>Why Us</Link>
+          <Link href={`/${createQuery({ gymName, city, phone })}#why-us`}>Why Us</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-          <Link href={`/?name=${gymName}&city=${city}&phone=${phone}#our-features`}>Our Features</Link>
+          <Link href={`/${createQuery({ gymName, city, phone })}#our-features`}>Our Features</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-          <Link href={`/?name=${gymName}&city=${city}&phone=${phone}#pricing`}>Pricing</Link>
+          <Link href={`/${createQuery({ gymName, city, phone })}#pricing`}>Pricing</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-          <Link href={`/?name=${gymName}&city=${city}&phone=${phone}#testimonials`}>Testimonials</Link>
+          <Link href={`/${createQuery({ gymName, city, phone })}#testimonials`}>Testimonials</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
     </NavigationMenuList>

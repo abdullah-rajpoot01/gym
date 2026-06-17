@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { useSearchParams } from "next/navigation";
+import { createQuery } from "@/lib/create-query";
 
 interface FooterLink {
   label: string
@@ -11,7 +12,7 @@ interface FooterLinksSection {
   title: string
   links: FooterLink[]
 }
-
+ 
 const Footer1 = () => {
   const searchParams = useSearchParams();
 
@@ -22,19 +23,19 @@ const Footer1 = () => {
   const linkSections: FooterLinksSection[] = [
     {
       title: "Quick Links",
-      links: [{ label: "Home", url: `/?name=${gymName}&city=${city}&phone=${phone}` },
-      { label: "Why Us", url: `/?name=${gymName}&city=${city}&phone=${phone}#why-us` },
-      { label: "Our Features", url: `/?name=${gymName}&city=${city}&phone=${phone}#our-features` },
-      { label: "Pricing", url: `/?name=${gymName}&city=${city}&phone=${phone}#pricing` },
-      { label: "Testimonials", url: `/?name=${gymName}&city=${city}&phone=${phone}#testimonials` },
+      links: [{ label: "Home", url: `/${createQuery({ gymName, city, phone })}` },
+      { label: "Why Us", url: `/${createQuery({ gymName, city, phone })}#why-us` },
+      { label: "Our Features", url: `/${createQuery({ gymName, city, phone })}#our-features` },
+      { label: "Pricing", url: `/${createQuery({ gymName, city, phone })}#pricing` },
+      { label: "Testimonials", url: `/${createQuery({ gymName, city, phone })}#testimonials` },
       ],
     },
     {
       title: "Need Help?",
       links: [
-        { label: "About Us", url: `/about-us?name=${gymName}&city=${city}&phone=${phone}` },
-        { label: "Contact Us", url: `/contact-us?name=${gymName}&city=${city}&phone=${phone}` },
-        { label: "Privacy Policy", url: `/privacy-policy?name=${gymName}&city=${city}&phone=${phone}` },
+        { label: "About Us", url: `/about-us${createQuery({ gymName, city, phone })}` },
+        { label: "Contact Us", url: `/contact-us${createQuery({ gymName, city, phone })}` },
+        { label: "Privacy Policy", url: `/privacy-policy${createQuery({ gymName, city, phone })}` },
       ],
     },
   ];
@@ -43,14 +44,14 @@ const Footer1 = () => {
     <div className="px-6 w-full relative text-foreground">
       <div className="flex flex-col md:flex-row items-start justify-between gap-10 py-10 border-b border-gray-500/30 text-primary-foreground relative! overflow-hidden">
         <div className="">
-          <a href={`/name=${gymName}&city=${city}&phone=${phone}`} className="inline-flex items-center justify-center gap-2  rounded-full ">
+          <a href={`/${createQuery({ gymName, city, phone })}`} className="inline-flex items-center justify-center gap-2  rounded-full ">
             <div className="flex items-center gap-3">
               <Avatar className="size-9">
                 {/* <AvatarImage alt="@shadcn" src="https://github.com/shadcn.png" /> */}
                 <AvatarFallback className="bg-black text-white uppercase">{gymName.charAt(0)}</AvatarFallback>
               </Avatar>
               <div className="flex items-center gap-1 font-bold leading-none tracking-wider text-xl text-foreground">
-                {gymName} 
+                {gymName}
               </div>
             </div>
           </a>
@@ -79,7 +80,7 @@ const Footer1 = () => {
         </div>
       </div>
       <p className="py-4 text-center text-sm md:text-base text-foreground/80 border-t border-t-primary-foreground/50">
-        Copyright 2026 © <Link href={`/name=${gymName}&city=${city}&phone=${phone}`}>{gymName} Gym .</Link> All
+        Copyright 2026 © <Link href={`/${createQuery({ gymName, city, phone })}`}>{gymName} Gym .</Link> All
         Right Reserved.
       </p>
     </div>

@@ -1,12 +1,13 @@
+import { createQuery } from '@/lib/create-query';
 import { Button } from './ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
 interface CTAProps {
   gymName: string;
-phone:string;
+  phone: string;
   city: string;
 }
-const CTA = ({ gymName, city,phone }: CTAProps) => {
+const CTA = ({ gymName, city, phone }: CTAProps) => {
   return (
     <section>
       <div data-aos="fade-right" className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
@@ -19,7 +20,7 @@ const CTA = ({ gymName, city,phone }: CTAProps) => {
               <p className="hidden text-gray-700 sm:mt-4 sm:block">
                 {gymName} Gym in {city} offers a safe and modern fitness space for both men and women. With separate areas, expert trainers, and affordable plans, it's the perfect place for cardio, strength training, and weight loss. Join now to start your fitness journey!
               </p> pexels-binyaminmellish-17840
-              <Link href={`/contact-us?name=${gymName}&city=${city}&phone=${phone}`} className="mt-4 md:mt-8 hover:animate-pulsing hover:animate-iteration-count-infinite">
+              <Link href={`/contact-us${createQuery({ gymName, city, phone })}`} className="mt-4 md:mt-8 hover:animate-pulsing hover:animate-iteration-count-infinite">
                 <Button>
                   Get Started Today
                 </Button>

@@ -13,6 +13,7 @@ import { DollarSign, HeartPulse, Home, Menu, MenuSquare, User2Icon, UserCircle }
 import { ScrollArea } from "./ui/scroll-area"
 import { useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
+import { createQuery } from "@/lib/create-query"
 
 export function MobileNavDialog() {
     const [open, setOpen] = useState(false);
@@ -35,7 +36,7 @@ export function MobileNavDialog() {
             <DialogContent className="h-[80vh] sm:max-w-none lg:hidden  flex flex-col gap-0 p-0">
                 <DialogHeader className="p-6 pb-0 shrink-0">
                     <DialogTitle className="">
-                        <Link onClick={closeDialog} href={`/?name=${gymName}&city=${city}&phone=${phone}`} className="flex items-center gap-3">
+                        <Link onClick={closeDialog} href={`/${createQuery({ gymName, city, phone })}`} className="flex items-center gap-3">
                             <Avatar className="size-9">
                                 <AvatarFallback className="bg-foreground text-background uppercase">
                                     {gymName.charAt(0)}
@@ -52,38 +53,38 @@ export function MobileNavDialog() {
                     <div className="pt-4 pb-2 flex flex-col gap-4">
                         <nav className="flex flex-col items-start w-full gap-3">
                             <Link onClick={closeDialog}
-                                href={`/?name=${gymName}&city=${city}&phone=${phone}`}
+                                href={`/${createQuery({ gymName, city, phone })}`}
                                 className="w-full flex items-center  gap-3 px-6 py-3 text-left bg-accent transition-colors"
                             >
                                 <Home className="size-5" /> <span>Home</span>
                             </Link>
                             <Link onClick={closeDialog}
-                                href={`/?name=${gymName}&city=${city}&phone=${phone}#why-us`}
+                                href={`/${createQuery({ gymName, city, phone })}#why-us`}
                                 className="w-full flex items-center  gap-3 px-6 py-3 text-left bg-accent transition-colors"
                             >
                                 <MenuSquare className="size-5" /> <span>Why Us</span>
                             </Link>
                             <Link onClick={closeDialog}
-                                href={`/?name=${gymName}&city=${city}&phone=${phone}#our-features`}
+                                href={`/${createQuery({ gymName, city, phone })}#our-features`}
                                 className="w-full flex items-center  gap-3 px-6 py-3 text-left bg-accent transition-colors"
                             >
                                 <HeartPulse className="size-5" /> <span>Our Features</span>
                             </Link>
                             <Link onClick={closeDialog}
-                                href={`/?name=${gymName}&city=${city}&phone=${phone}#pricing`}
+                                href={`/${createQuery({ gymName, city, phone })}#pricing`}
 
                                 className="w-full flex items-center  gap-3 px-6 py-3 text-left bg-accent transition-colors"
                             >
                                 <DollarSign className="size-5" /> <span>Pricing</span>
                             </Link>
                             <Link onClick={closeDialog}
-                                href={`/?name=${gymName}&city=${city}&phone=${phone}#testimonials`}
+                                href={`/${createQuery({ gymName, city, phone })}#testimonials`}
                                 className="w-full flex items-center  gap-3 px-6 py-3 text-left bg-accent transition-colors"
                             >
                                 <User2Icon className="size-5" /> <span>Testimonials</span>
                             </Link>
                             <Link onClick={closeDialog}
-                                href={`/about-us?name=${gymName}&city=${city}&phone=${phone}`}
+                                href={`/about-us${createQuery({ gymName, city, phone })}`}
 
                                 className="w-full flex items-center  gap-3 px-6 py-3 text-left bg-accent transition-colors"
                             >
@@ -93,7 +94,7 @@ export function MobileNavDialog() {
                         <div className="shrink-0 p-6 pt-0">
                             <div className="flex flex-col gap-3">
                                 <Button onClick={() => {
-                                    router.push(`/contact-us?name=${gymName}&city=${city}&phone=${phone}`);
+                                    router.push(`/contact-us${createQuery({ gymName, city, phone })}`);
                                     closeDialog()
                                 }}
                                     className=" w-full"
