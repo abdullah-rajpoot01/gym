@@ -19,7 +19,7 @@ const CTA = ({ gymName, city, phone }: CTAProps) => {
               </h2>
               <p className="hidden text-gray-700 sm:mt-4 sm:block">
                 {gymName} Gym in {city} offers a safe and modern fitness space for both men and women. With separate areas, expert trainers, and affordable plans, it's the perfect place for cardio, strength training, and weight loss. Join now to start your fitness journey!
-              </p> pexels-binyaminmellish-17840
+              </p> 
               <Link href={`/contact-us${createQuery({ gymName, city, phone })}`} className="mt-4 md:mt-8 hover:animate-pulsing hover:animate-iteration-count-infinite">
                 <Button>
                   Get Started Today
