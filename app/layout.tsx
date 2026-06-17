@@ -7,6 +7,7 @@ import Footer1 from "@/components/footer-1";
 import AOSInit from "@/components/init-aos";
 import { DialogBanner } from "@/components/dialog-banner";
 import { Suspense } from "react";
+import WhatsAppButton from "@/components/whatsapp-button";
 
 const playfairDisplay = Playfair_Display({ subsets: ['latin'], variable: '--font-serif' });
 
@@ -79,6 +80,7 @@ export default function RootLayout({
           {children}
           <Footer1 />
           <AOSInit />
+          <WhatsAppButton />
         </Suspense>
       </body>
     </html>
