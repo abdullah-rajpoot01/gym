@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   description:
     "Looking for the best gym in your city? We offer separate facilities for men and women, expert fitness trainers, modern cardio and strength equipment, weight loss programs, and affordable membership packages. Start your fitness journey today.",
 
-  metadataBase: new URL("https://zakigym.pages.dev"),
+  metadataBase: new URL("https://mygyms.pages.dev"),
 
   openGraph: {
     title: "Best Unisex Fitness Center for Men & Women",
