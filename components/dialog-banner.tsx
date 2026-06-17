@@ -13,7 +13,7 @@ import { Badge } from "./ui/badge"
 import { useSearchParams } from "next/navigation"
 
 export function DialogBanner() {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     const searchParams = useSearchParams();
 
     const gymName = searchParams.get("name") || "Rajpoot";
@@ -33,6 +33,7 @@ export function DialogBanner() {
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogContent className="h-[80vh] sm:max-w-md rounded-xl flex flex-col gap-0 p-0 bg-gray-900 [&>button:last-child]:hidden ">
+                            <ScrollArea className="flex-1 h-full w-full overflow-hidden no-scrollbar">
                 <DialogHeader className="bg-red-700 p-4 rounded-t-xl shrink-0">
                     <DialogTitle className="flex flex-col items-center">
                         <div className="flex justify-around items-center w-full relative">
@@ -50,8 +51,8 @@ export function DialogBanner() {
                     </DialogTitle>
                 </DialogHeader>
 
-                <ScrollArea className="flex-1 w-full px-4">
-                    <div className="flex flex-col gap-3 py-4">
+
+                    <div className="flex flex-col gap-3 px-4 py-4">
                         <div className="flex items-start gap-3 text-white">
                             <Home className="shrink-0 bg-white rounded-full p-1 text-black size-6" />
                             <div className="flex flex-col">
