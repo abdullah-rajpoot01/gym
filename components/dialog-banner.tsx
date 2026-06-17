@@ -6,13 +6,19 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@/components/ui/dialog"
-import { HeartPulse, Home, Mail, MessageCircle, PhoneCall, X } from "lucide-react"
+import { Clock, Dumbbell, HeartPulse, Home, Mail, MessageCircle, PhoneCall, X } from "lucide-react"
 import { ScrollArea } from "./ui/scroll-area"
 import { useEffect, useState } from "react"
 import { Badge } from "./ui/badge"
+import { useSearchParams } from "next/navigation"
 
 export function DialogBanner() {
     const [open, setOpen] = useState(false);
+    const searchParams = useSearchParams();
+
+    const gymName = searchParams.get("name") || "Rajpoot";
+    const phone = searchParams.get("phone") || "+92 300 0000000";
+    const city = searchParams.get("city") || "Multan";
 
     useEffect(() => {
         // Auto show after 30 seconds
@@ -40,7 +46,7 @@ export function DialogBanner() {
                             Gym Tour Today
                         </div>
                         <p className="mt-3 text-pretty text-center text-base tracking-[-0.01em] text-white/70">
-                            Zaki Gym – Best Unisex Fitness Center for Men & Women in Khanewal                        </p>
+                            {gymName} Gym – Best Unisex Fitness Center for Men & Women in {city}                        </p>
                     </DialogTitle>
                 </DialogHeader>
 
@@ -65,19 +71,27 @@ export function DialogBanner() {
                             </div>
                         </div>
                         <div className="flex items-start gap-3 text-white">
-                            <HeartPulse className="shrink-0 bg-white rounded-full p-1 text-black size-6" />
+                            <Dumbbell className="shrink-0 bg-white rounded-full p-1 text-black size-6" />
                             <div className="flex flex-col">
-                                <p>Free Fitness Assessment</p>
+                                <p>Free Workout Consultation</p>
                                 <p className="text-white/70">
-                                    BMI, body analysis & goal planning
+                                    Personalized training advice from our fitness coaches
                                 </p>
                             </div>
                         </div>
-
+                        <div className="flex items-start gap-3 text-white">
+                            <Clock className="shrink-0 bg-white rounded-full p-1 text-black size-6" />
+                            <div className="flex flex-col">
+                                <p>Free Trial Workout</p>
+                                <p className="text-white/70">
+                                    Experience our equipment and training environment firsthand
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     <div className="shrink-0 p-4 pt-4">
                         <div className="flex items-center justify-center flex-wrap gap-3">
-                            <a href="tel:+923460881219">
+                            <a href={`tel:+${phone}`}>
                                 <Button
                                     className="rounded-full text-black bg-white hover:bg-white"
                                     size={"sm"}
@@ -85,7 +99,7 @@ export function DialogBanner() {
                                     <PhoneCall /> Phone
                                 </Button>
                             </a>
-                            <a href="https://wa.me/923460881219"
+                            <a href={`https://wa.me/${phone}`}
                                 target="_blank">
                                 <Button
                                     className="rounded-full text-white"
@@ -95,7 +109,7 @@ export function DialogBanner() {
                                     <MessageCircle /> Whatsapp
                                 </Button>
                             </a>
-                            <a href="mailto:zakigym@gmail.com">
+                            <a href={`mailto:${gymName}gym@gmail.com`}>
                                 <Button
                                     className="rounded-full text-white"
                                     variant="outline"
