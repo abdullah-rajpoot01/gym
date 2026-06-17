@@ -4,7 +4,7 @@ import { MetadataRoute } from 'next'
 export const dynamic = "force-static"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://zakigym.pages.dev' 
+  const baseUrl = 'https://mygyms.pages.dev' 
 
   return [
     {
