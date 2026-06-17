@@ -34,7 +34,7 @@ export default function Home() {
         city={city}
       />
 
-      <Pricing gymName={gymName} city={city} />
+      <Pricing gymName={gymName} city={city} phone={phone}/>
 
       <Testimonials gymName={gymName} city={city} />
 

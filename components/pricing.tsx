@@ -50,8 +50,9 @@ const plans = [
 interface PricingProps {
   gymName: string;
   city: string;
+  phone:string;
 }
-const Pricing = ({gymName,city}:PricingProps) => {
+const Pricing = ({gymName,city,phone}:PricingProps) => {
 
   return (
     <div id="pricing" className="px-6 py-20 ">
@@ -83,7 +84,7 @@ const Pricing = ({gymName,city}:PricingProps) => {
                 </li>
               ))}
             </ul>
-            <a href="tel:+923460881219">
+            <a href={`tel:+${phone}`}>
             <Button
               className="mt-6 w-full animate-shake"
               size="lg"
