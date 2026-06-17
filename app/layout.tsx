@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar";
 import Footer1 from "@/components/footer-1";
 import AOSInit from "@/components/init-aos";
 import { DialogBanner } from "@/components/dialog-banner";
+import { Suspense } from "react";
 
 const playfairDisplay = Playfair_Display({ subsets: ['latin'], variable: '--font-serif' });
 
@@ -72,11 +73,13 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-serif", playfairDisplay.variable)}
     >
       <body suppressHydrationWarning className="min-h-screen max-w-7xl flex flex-col justify-between relative mx-auto">
-        <Navbar />
-        <DialogBanner />
-        {children}
-        <Footer1 />
-        <AOSInit />
+        <Suspense fallback={null}>
+          <Navbar />
+          <DialogBanner />
+          {children}
+          <Footer1 />
+          <AOSInit />
+        </Suspense>
       </body>
     </html>
   );

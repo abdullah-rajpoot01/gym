@@ -22,13 +22,13 @@ export default function Features({ gymName, city }: FeaturesProps) {
     },
     {
       icon: ShieldCheckIcon,
-      image: "/gym/pexels-tima-miroshnichenko-5327502.jpg",
+      image: "/gym/pexels-foadshariyati-31918876.jpg",
       title: `Certified Trainers`,
       description: `Get expert guidance from experienced fitness coaches who help you achieve your goals safely and effectively in ${city}.`,
     },
     {
       icon: BinocularsIcon,
-      image: "/gym/pexels-alexapopovich-10551491.jpg",
+      image: "/gym/pexels-foadshariyati-31849589.jpg",
       title: `Motivating Environment`,
       description: `Join a supportive fitness community in ${city} where motivation, discipline, and results come together at ${gymName}.`,
     },
