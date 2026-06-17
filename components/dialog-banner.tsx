@@ -13,7 +13,7 @@ import { Badge } from "./ui/badge"
 import { useSearchParams } from "next/navigation"
 
 export function DialogBanner() {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
     const searchParams = useSearchParams();
 
     const gymName = searchParams.get("name") || "Rajpoot";
@@ -22,7 +22,7 @@ export function DialogBanner() {
 
     useEffect(() => {
         // Auto show after 30 seconds
-        const timer = setTimeout(() => setOpen(true), 300000);
+        const timer = setTimeout(() => setOpen(true), 200000);
 
         return () => {
             clearTimeout(timer);
