@@ -10,7 +10,8 @@ interface HeroProps {
 
 export default function Hero({ gymName, phone, city }: HeroProps) {
   return (
-    <div className="relative w-full flex py-10 items-center justify-center overflow-hidden px-6 bg-black/90 bg-[url('/gym/pexels-dimkidama-6796964.jpg')] bg-cover bg-center bg-fixed">
+    <div className="relative w-full flex py-10 items-center justify-center overflow-hidden px-6 bg-black/90 bg-[url('/gym/pexels-mknouman-18502146.jpg')]  md:bg-[url('/gym/pexels-dimkidama-6796964.jpg')] bg-cover bg-center bg-fixed">
+      <div className="absolute inset-0 bg-black/50 md:bg-black/30 z-0" />
 
       <div className="relative z-10 max-w-4xl text-center px-5 md:p-0 overflow-hidden">
 
