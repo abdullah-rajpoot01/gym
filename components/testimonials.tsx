@@ -51,12 +51,15 @@ const testimonials = [
       "Great place to work on your fitness goals. The equipment is well maintained and the atmosphere keeps me motivated every day.",
   },
 ];
-  return <div id="testimonials" className="px-6 py-20 bg-[url('/gym/pexels-tima-miroshnichenko-5327551.jpg')] bg-cover bg-center bg-fixed">
-    <div>
-      <h2 className="text-white text-center font-medium text-4xl tracking-[-0.04em] md:text-[2.75rem]">
-        What Our Members Say
+  return <div id="testimonials" className="relative px-6 py-20 bg-background/80 bg-cover bg-center bg-fixed">
+
+
+    <div className="z-10">
+
+      <h2 className=" text-foreground text-center font-medium text-4xl tracking-[-0.04em] md:text-[2.75rem]">
+        What <strong className="text-primary">Our Members</strong> Say
       </h2>
-      <p className="text-white/80 mt-3.5 text-center text-xl tracking-[-0.015em] md:text-2xl">
+      <p className="text-foreground/80 mt-3.5 text-center text-xl tracking-[-0.015em] md:text-2xl">
         Hear from the people who train with us at {gymName} Gym {city}.
       </p>
       <div className="mx-auto mt-14 max-w-(--breakpoint-xl) columns-1 gap-8 md:columns-2 lg:columns-3 overflow-hidden">

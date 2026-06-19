@@ -1,4 +1,4 @@
-import { CircleCheck } from "lucide-react";
+import { CircleCheck, Dot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
@@ -50,17 +50,17 @@ const plans = [
 interface PricingProps {
   gymName: string;
   city: string;
-  phone:string;
+  phone: string;
 }
-const Pricing = ({gymName,city,phone}:PricingProps) => {
+const Pricing = ({ gymName, city, phone }: PricingProps) => {
 
   return (
     <div id="pricing" className="px-6 py-20 ">
       <h2 className="text-center font-medium text-4xl tracking-[-0.04em] sm:text-[2.75rem]">
         Membership Plans
       </h2>
-      <p className="mt-3 text-center text-muted-foreground text-xl -tracking-[0.01em] md:text-2xl">
-        Affordable fitness plans at {gymName} Gym {city} for every fitness level.
+      <p className="mt-3 text-center text-muted-foreground text-xl tracking-[-0.01em] md:text-2xl">
+        Affordable fitness plans at <strong className='text-primary'>{gymName}</strong>  Gym {city} for every fitness level.
       </p>
       <div className="mx-auto mt-12 grid max-w-(--breakpoint-lg) grid-cols-1 gap-8 sm:mt-16 lg:grid-cols-3 overflow-hidden">
         {plans.map((plan, index) => (
@@ -68,7 +68,7 @@ const Pricing = ({gymName,city,phone}:PricingProps) => {
             className="border border-border/85 bg-card p-6 shadow-xs/3 "
             key={plan.name}
           >
-            <h3 className="font-medium text-lg">{plan.name}</h3>
+            <h3 className="font-medium text-lg text-primary">{plan.name}</h3>
             <p className="mt-2 font-satoshi font-semibold text-4xl">
               Rs {plan.price}
             </p>
@@ -79,19 +79,19 @@ const Pricing = ({gymName,city,phone}:PricingProps) => {
             <ul className="space-y-2">
               {plan.features.map((feature) => (
                 <li className="flex items-start gap-2" key={feature}>
-                  <CircleCheck className="mt-1 h-4 w-4 text-green-600" />{" "}
+                  <Dot className=" h-7 w-7 text-primary" />{" "}
                   {feature}
                 </li>
               ))}
             </ul>
             <a href={`tel:+${phone}`}>
-            <Button
-              className="mt-6 w-full animate-shake"
-              size="lg"
-              variant={plan.isPopular ? "default" : "outline"}
-            >
-              {plan.buttonText}
-            </Button>
+              <Button
+                className="mt-6 w-full animate-shake"
+                size="lg"
+                variant={plan.isPopular ? "default" : "outline"}
+              >
+                {plan.buttonText}
+              </Button>
             </a>
           </div>
         ))}

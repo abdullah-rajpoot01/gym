@@ -8,6 +8,13 @@ import Features from "@/components/why-us";
 import Hero from "@/components/hero";
 import Pricing from "@/components/pricing";
 import Testimonials from "@/components/testimonials";
+import ProgramsComponent from "@/components/programs";
+import Team from "@/components/team";
+import WhatTakeUsApart from "@/components/what-is-different";
+import VideoSection from "@/components/video-section";
+import OwnerSection from "@/components/owner-section";
+import Location from "@/components/location";
+import Stats from "@/components/stats";
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -24,19 +31,34 @@ export default function Home() {
         city={city}
       />
 
-      <Features
-        gymName={gymName}
-        city={city}
-      />
+      <Features />
+
+      <Stats />
+
+
+      <ProgramsComponent />
+
+      <OwnerSection />
+
 
       <AboutFeatures
         gymName={gymName}
         city={city}
       />
 
-      <Pricing gymName={gymName} city={city} phone={phone}/>
+      <WhatTakeUsApart
+        gymName={gymName}
+        city={city} />
+
+      <Pricing gymName={gymName} city={city} phone={phone} />
+
+      <VideoSection />
+
+      <Team />
 
       <Testimonials gymName={gymName} city={city} />
+
+      <Location />
 
       <CTA
         gymName={gymName}

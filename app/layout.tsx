@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { Geist, Geist_Mono,Oswald } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/navbar";
@@ -9,7 +9,7 @@ import { DialogBanner } from "@/components/dialog-banner";
 import { Suspense } from "react";
 import WhatsAppButton from "@/components/whatsapp-button";
 
-const playfairDisplay = Playfair_Display({ subsets: ['latin'], variable: '--font-serif' });
+const playfairDisplay = Oswald({ subsets: ['latin'], variable: '--font-serif' });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -73,10 +73,9 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-serif", playfairDisplay.variable)}
     >
-      <body suppressHydrationWarning className="min-h-screen max-w-7xl flex flex-col justify-between relative mx-auto">
+      <body suppressHydrationWarning className="min-h-screen dark max-w-7xl flex flex-col justify-between relative mx-auto">
         <Suspense fallback={null}>
           <Navbar />
-          <DialogBanner />
           {children}
           <Footer1 />
           <AOSInit />

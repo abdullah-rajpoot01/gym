@@ -51,39 +51,44 @@ interface AboutFeaturesProps {
 }
 const AboutFeatures = ({ gymName, city }: AboutFeaturesProps) => {
   return (
-    <div id="our-features" className="mx-auto flex max-w-7xl flex-col px-6 py-30 bg-black/90 bg-[url('/gym/pexels-eyecon-design-500632474-17211446.jpg')] bg-cover bg-center bg-fixed">
-      <h2 className="text-background text-pretty text-center font-medium text-4xl tracking-[-0.04em] sm:text-[2.75rem]">
-        What We Provide
-      </h2>
-      <p className="text-background/80 mt-3 text-pretty text-center  text-xl tracking-[-0.01em] sm:text-2xl">
-        Everything you need to stay fit, healthy, and motivated at {gymName} Gym {city}.
-      </p>
+    <div id="our-features" className="mx-auto flex max-w-7xl flex-col px-6 py-30 relative">
 
-      <div className="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {features.map((feature, index) => (
-          <div data-aos={"fade-right"}
-            className="relative overflow-hidden  border bg-card p-6 dark:border-card-foreground/70
-"
-            key={index}
-          >
-            <div className=" flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground ">
-              <feature.icon />
-            </div>
-            <h3 className="mt-5 font-medium text-lg tracking-[-0.005em]">
-              {feature.title}
-            </h3>
-            <p className="mt-2 text-foreground/80">{feature.description}</p>
+      <div className="absolute inset-0 w-full h-full bg-background/70 z-0 flex justify-center">
+      </div>
+      <div className="z-10">
 
-            <div
-              className="absolute inset-0 -top-px z-0"
-              style={{
-                backgroundImage: `
+
+        <h2 className="text-background dark:text-foreground text-pretty text-center font-medium text-4xl tracking-[-0.04em] sm:text-[2.75rem]">
+          What We Provide
+        </h2>
+        <p className="text-background/80 dark:text-foreground/80 mt-3 text-pretty text-center  text-xl tracking-[-0.01em] sm:text-2xl">
+          Everything you need to stay fit, healthy, and motivated at <strong className='text-primary'>{gymName}</strong> Gym {city}.
+        </p>
+
+        <div className="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature, index) => (
+            <div data-aos={"fade-right"}
+              className="relative overflow-hidden  border bg-card p-6 dark:border-card-foreground/70 "
+              key={index}
+            >
+              <div className=" flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground ">
+                <feature.icon />
+              </div>
+              <h3 className="mt-5 font-medium text-lg tracking-[-0.005em]">
+                {feature.title}
+              </h3>
+              <p className="mt-2 text-foreground/80">{feature.description}</p>
+
+              <div
+                className="absolute inset-0 -top-px z-0"
+                style={{
+                  backgroundImage: `
         linear-gradient(to right, var(--border) 1px, transparent 1px),
         linear-gradient(to bottom, var(--border) 1px, transparent 1px)
       `,
-                backgroundSize: "20px 20px",
-                backgroundPosition: "0 0, 0 0",
-                maskImage: `
+                  backgroundSize: "20px 20px",
+                  backgroundPosition: "0 0, 0 0",
+                  maskImage: `
           repeating-linear-gradient(
               to right,
               black 0px,
@@ -100,7 +105,7 @@ const AboutFeatures = ({ gymName, city }: AboutFeaturesProps) => {
             ),
             radial-gradient(ellipse 100% 80% at 100% 0%, #000 50%, transparent 100%)
       `,
-                WebkitMaskImage: `
+                  WebkitMaskImage: `
     repeating-linear-gradient(
               to right,
               black 0px,
@@ -117,12 +122,13 @@ const AboutFeatures = ({ gymName, city }: AboutFeaturesProps) => {
             ),
             radial-gradient(ellipse 80% 80% at 100% 0%, #000 50%, transparent 90%)
       `,
-                maskComposite: "intersect",
-                WebkitMaskComposite: "source-in",
-              }}
-            />
-          </div>
-        ))}
+                  maskComposite: "intersect",
+                  WebkitMaskComposite: "source-in",
+                }}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
