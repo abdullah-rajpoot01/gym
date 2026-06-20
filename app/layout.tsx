@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "Best Unisex Fitness Center for Men & Women",
+    title: "Best Fitness Center for Men & Women",
 
     description:
       "Looking for the best gym in your city? We offer separate facilities for men and women, expert fitness trainers, modern cardio and strength equipment, weight loss programs, and affordable membership packages. Start your fitness journey today.",
