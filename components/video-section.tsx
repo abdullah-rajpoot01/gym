@@ -34,7 +34,7 @@ export default function VideoSection({gymName,city,phone}:SectionProps) {
                 </div>
                 <div className="mt-auto aspect-square  w-full max-w-md  bg-accent" >
                     <video
-                        src="https://www.crossfitmultan.com/video.mp4"
+                        src="/gym/15079793_720_1280_30fps.mp4"
                         autoPlay={true}
                         muted={true}
                         loop={true}

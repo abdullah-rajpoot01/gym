@@ -1,12 +1,13 @@
 import { ArrowRight, Clock, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
-import React from 'react'
 import { Button } from './ui/button';
+
 interface SectionProps {
   gymName: string;
   phone: string;
   city: string;
 }
+
 const Location = ({ gymName, city, phone }: SectionProps) => {
   return (
     <section className="py-16 md:py-24 px-4">

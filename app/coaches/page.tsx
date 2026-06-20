@@ -1,3 +1,4 @@
+"use client"
 import Team from '@/components/team';
 
 const Page = () => {

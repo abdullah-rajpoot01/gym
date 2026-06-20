@@ -44,10 +44,10 @@ export default function HeroSection({ gymName, city, phone }: SectionProps) {
                 </div>
                 <div className="relative overflow-hidden max-w-md lg:aspect-square mx-auto border border-foreground/10 bg-black ">
                     <CarouselWithFooter />
-                    <div className="absolute inset-0 bg-black/30 z-15" />
+                    <div className="absolute inset-0 bg-black/30 z-5" />
 
                    
-                    <div className="absolute bottom-5 left-5  border border-primary/25 bg-black/80 px-4 py-3 text-sm">
+                    <div className="absolute bottom-5 left-5  border border-primary/25 bg-black/80 px-4 py-3 text-sm z-10">
                         <div className="font-heading font-black uppercase text-white">
                             {gymName} GYM
                         </div>

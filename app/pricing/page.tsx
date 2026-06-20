@@ -1,3 +1,4 @@
+"use client"
 import Pricing from '@/components/pricing'
 import { useSearchParams } from 'next/navigation';
 import React from 'react'
