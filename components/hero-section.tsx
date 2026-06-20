@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import CarouselWithFooter from "./carousel-07";
 import Typewriter from "./typewriter";
+import { createQuery } from "@/lib/create-query";
 
 interface SectionProps {
     gymName: string;
@@ -14,7 +15,7 @@ export default function HeroSection({ gymName, city, phone }: SectionProps) {
         <section className="pt-20 pb-8 px-4 md:px-8 min-h-screen">
             <div className=" grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
                 <div>
-                       <span className="block text-primary text-balance font-heading text-4xl font-black uppercase leading-[0.94]  sm:text-5xl">{gymName}</span>
+                    <span className="block text-primary text-balance font-heading text-4xl font-black uppercase leading-[0.94]  sm:text-5xl">{gymName}</span>
                     <h2 className="mt-3 text-balance font-heading text-4xl font-black uppercase leading-[0.94] text-foreground sm:text-5xl">
                         More Than A Gym.{/* */}{" "}
                         <span className="block text-primary"><Typewriter texts={[
@@ -31,12 +32,12 @@ export default function HeroSection({ gymName, city, phone }: SectionProps) {
                     </p>
                     <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                         <Link
-                            href="/join"
+                            href={`tel:+${phone}`}
                         >
-                            <Button> Join Now</Button>
+                            <Button> Call Now</Button>
                         </Link>
                         <Link
-                            href="/contact-us"
+                            href={`/contact-us${createQuery({ phone, gymName, city })}`}
                         >
                             <Button variant={"outline"}> Ask About Coaching</Button>
                         </Link>
@@ -46,7 +47,7 @@ export default function HeroSection({ gymName, city, phone }: SectionProps) {
                     <CarouselWithFooter />
                     <div className="absolute inset-0 bg-black/30 z-5" />
 
-                   
+
                     <div className="absolute bottom-5 left-5  border border-primary/25 bg-black/80 px-4 py-3 text-sm z-10">
                         <div className="font-heading font-black uppercase text-white">
                             {gymName} GYM

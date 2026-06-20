@@ -62,8 +62,7 @@ const Contact = () => {
                                             Address
                                         </span>
                                         <span className="mt-1 block text-sm leading-6 text-foreground/90">
-                                            Sultan Ghee Mill, Gate # 2 Vehari Road, Fatima Jinnah Colony,
-                                            Multan 66000
+                                            XYZ Street Sectore 2 Phase 2 , {city}
                                         </span>
                                     </span>
                                 </a>
@@ -99,7 +98,7 @@ const Contact = () => {
                                             Phone
                                         </span>
                                         <span className="mt-1 block text-sm leading-6 text-foreground/90">
-                                            +92 307 8202141
+                                            +{phone}
                                         </span>
                                     </span>
                                 </a>
@@ -114,7 +113,7 @@ const Contact = () => {
                                 data-slot="card-content"
                                 className="group-data-[size=sm]/card:px-3 p-5"
                             >
-                                <a href="mailto:ironhaven141@gmail.com" className="flex gap-4">
+                                <a href={`mailto:${gymName}@gmail.com`} className="flex gap-4">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width={24}
@@ -136,7 +135,7 @@ const Contact = () => {
                                             Email
                                         </span>
                                         <span className="mt-1 block text-sm leading-6 text-foreground/90">
-                                            ironhaven141@gmail.com
+                                            {gymName}@gmail.com
                                         </span>
                                     </span>
                                 </a>
@@ -186,7 +185,7 @@ const Contact = () => {
                             </div>
                         </div>
                         <a
-                            href="https://share.google/QqrDdwCNao5wRTUKp"
+                            href="https://share.google/QqrDdwCNao5wR"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group/button inline-flex shrink-0 cursor-pointer items-center justify-center rounded-lg border border-transparent bg-clip-padding foregroundspace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground [a]:hover:bg-primary/80 h-9 gap-1.5 px-3 has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5 font-heading text-xs font-black uppercase tracking-[0.18em]"
@@ -211,8 +210,9 @@ const Contact = () => {
                         </a>
                     </div>
                     <div className="overflow-hidden rounded-lg border border-foreground/10 bg-black">
+
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3449.5445946194645!2d71.52223177605894!3d30.1644336128748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b377bc78da87d%3A0xa0a0e131aaa9bddf!2sIron%20Heaven%20Gym!5e0!3m2!1sen!2sus!4v1771759534020!5m2!1sen!2sus"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6502565.951838052!2d-119.306607!3d37.26950555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C%20USA!5e0!3m2!1sen!2s!4v1781942165425!5m2!1sen!2s"
                             width="100%"
                             height="100%"
                             allowFullScreen={true}

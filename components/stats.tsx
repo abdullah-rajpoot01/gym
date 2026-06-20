@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from './ui/button';
 import Link from 'next/link';
+import { createQuery } from '@/lib/create-query';
 interface SectionProps {
   gymName: string;
   phone: string;
@@ -67,12 +68,12 @@ const Stats = ({gymName,city,phone}:SectionProps) => {
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="/join"
+              href={`tel:+${phone}`}
             >
-             <Button> Join Now</Button>
+             <Button> Call Now</Button>
             </Link>
             <Link
-              href="/contact-us"
+              href={`/contact-us${createQuery({ phone, gymName, city })}`}
             >
              <Button variant={"outline"}> Ask About Coaching</Button>
             </Link>

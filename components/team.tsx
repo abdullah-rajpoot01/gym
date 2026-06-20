@@ -1,44 +1,44 @@
 
 const teamMembers = [
     {
-        name: "Liam Martinez",
-        image: "https://mockmind-api.uifaces.co/content/human/80.jpg",
+        name: "Zia Khan",
+        image: "/gym/pexels-foadshariyati-29793975.jpg",
         role: "Chief Executive Officer",
     },
     {
-        name: "Ava Thompson",
-        image: "https://mockmind-api.uifaces.co/content/human/65.jpg",
-        role: "Chief Technology Officer",
+        name: "Muhammad Ahmad",
+        image: "/gym/pexels-foadshariyati-29773891.jpg",
+        role: "Personal Trainer",
     },
     {
-        name: "Sophia Patel",
-        image: "https://mockmind-api.uifaces.co/content/human/25.jpg",
-        role: "Head of Design",
+        name: "Zeeshan Malik",
+        image: "/gym/pexels-foadshariyati-29773892.jpg",
+        role: "Personal Trainer",
     },
     {
-        name: "Noah Chen",
-        image: "https://mockmind-api.uifaces.co/content/human/104.jpg",
-        role: "Product Manager",
+        name: "Asad Ali",
+        image: "/gym/pexels-foadshariyati-29793975.jpg",
+        role: "Personal Trainer",
     },
     {
-        name: "Emma Garcia",
-        image: "https://mockmind-api.uifaces.co/content/human/19.jpg",
-        role: "Software Engineer",
+        name: "Ahsan Ch",
+        image: "/gym/pexels-foadshariyati-30165254.jpg",
+        role: "Personal Trainer",
     },
     {
-        name: "Ethan Kim",
-        image: "https://mockmind-api.uifaces.co/content/human/80.jpg",
-        role: "DevOps Engineer",
+        name: "M.Dilawer",
+        image: "/gym/pexels-foadshariyati-30206158.jpg",
+        role: "Personal Trainer",
     },
     {
-        name: "Mia Johnson",
-        image: "https://mockmind-api.uifaces.co/content/human/20.jpg",
-        role: "Marketing Lead",
+        name: "Waqas Ahmad",
+        image: "/gym/pexels-foadshariyati-30206161.jpg",
+        role: "Personal Trainer",
     },
     {
-        name: "Oliver Singh",
-        image: "https://mockmind-api.uifaces.co/content/human/90.jpg",
-        role: "Customer Success Manager",
+        name: "Zafar Ameen",
+        image: "/gym/pexels-foadshariyati-30283460.jpg",
+        role: "Personal Trainer",
     },
 ];
 

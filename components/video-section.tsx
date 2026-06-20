@@ -1,4 +1,4 @@
-import { ArrowUpRight, CirclePlay } from "lucide-react";
+import { ArrowUpRight, CirclePlay, Verified } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -19,17 +19,25 @@ export default function VideoSection({gymName,city,phone}:SectionProps) {
                     <p className="mt-4 max-w-[60ch] text-foreground/60 text-lg sm:mt-6 sm:text-xl/normal">
                         Join a community built on strength, discipline, and results. Our expert coaches and high-energy training programs help you push limits, build confidence, and achieve your fitness goals faster.
                     </p>
-                       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                        <Link
-                            href="/join"
-                        >
-                            <Button> Join Now</Button>
-                        </Link>
-                        <Link
-                            href="/contact-us"
-                        >
-                            <Button variant={"outline"}> Ask About Coaching</Button>
-                        </Link>
+                     <div className="mt-7 grid gap-3">
+                        <div className="flex items-center gap-3 text-sm text-foreground/80">
+                            <Verified className="size-4 text-primary" />
+                            Structured monthly memberships
+                        </div>
+                        <div className="flex items-center gap-3 text-sm text-foreground/80">
+                            <Verified className="size-4 text-primary" />
+
+                            Founder led coaching culture
+                        </div>
+                        <div className="flex items-center gap-3 text-sm text-foreground/80">
+                            <Verified className="size-4 text-primary" />
+
+                            Strength, physique, fat loss, and conditioning paths
+                        </div>
+                        <div className="flex items-center gap-3 text-sm text-foreground/80">
+                            <Verified className="size-4 text-primary" />
+                            Supplement pickup connected to the gym
+                        </div>
                     </div>
                 </div>
                 <div className="mt-auto aspect-square  w-full max-w-md  bg-accent" >

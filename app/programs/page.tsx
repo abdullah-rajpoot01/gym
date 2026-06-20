@@ -3,7 +3,9 @@ import ProgramsComponent from '@/components/programs';
 const Page = () => {
 
     return (
-        <ProgramsComponent />
+        <div className='w-full overflow-x-hidden'>
+            <ProgramsComponent />
+        </div>
     )
 }
 

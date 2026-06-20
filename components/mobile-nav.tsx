@@ -66,26 +66,26 @@ export function MobileNavDialog() {
                                 <Home className="size-5" /> <span>Home</span>
                             </Link>
                             <Link onClick={closeDialog}
-                                href={`/${createQuery({ gymName, city, phone })}#why-us`}
+                                href={`/programs${createQuery({ gymName, city, phone })}`}
                                 className="w-full flex items-center  gap-3 px-6 py-3 text-left bg-accent transition-colors"
                             >
-                                <MenuSquare className="size-5" /> <span>Why Us</span>
+                                <MenuSquare className="size-5" /> <span>Programs</span>
                             </Link>
                             <Link onClick={closeDialog}
-                                href={`/${createQuery({ gymName, city, phone })}#our-features`}
+                                href={`/pricing${createQuery({ gymName, city, phone })}`}
                                 className="w-full flex items-center  gap-3 px-6 py-3 text-left bg-accent transition-colors"
                             >
-                                <HeartPulse className="size-5" /> <span>Our Features</span>
+                                <HeartPulse className="size-5" /> <span>Pricing</span>
                             </Link>
                             <Link onClick={closeDialog}
-                                href={`/${createQuery({ gymName, city, phone })}#pricing`}
+                                href={`/coaches${createQuery({ gymName, city, phone })}`}
 
                                 className="w-full flex items-center  gap-3 px-6 py-3 text-left bg-accent transition-colors"
                             >
-                                <DollarSign className="size-5" /> <span>Pricing</span>
+                                <DollarSign className="size-5" /> <span>Coaches</span>
                             </Link>
                             <Link onClick={closeDialog}
-                                href={`/${createQuery({ gymName, city, phone })}#testimonials`}
+                                href={`/testimonials${createQuery({ gymName, city, phone })}`}
                                 className="w-full flex items-center  gap-3 px-6 py-3 text-left bg-accent transition-colors"
                             >
                                 <User2Icon className="size-5" /> <span>Testimonials</span>

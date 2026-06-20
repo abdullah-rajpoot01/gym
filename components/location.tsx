@@ -19,7 +19,7 @@ const Location = ({ gymName, city, phone }: SectionProps) => {
           </h2>
           <div className="mt-8 grid gap-5 text-sm text-foreground/90">
             <a
-              href="https://share.google/QqrDdwCNao5wRTUKp"
+              href="https://www.google.com/maps?q=36.60212164144929,-119.46041557671056"
               target="_blank"
               rel="noopener noreferrer"
               className="flex gap-4 transition hover:text-foreground"
@@ -52,17 +52,17 @@ const Location = ({ gymName, city, phone }: SectionProps) => {
             </div>
           </div>
           <Link
-            href="https://share.google/QqrDdwCNao5wRTUKp"
+            href="https://www.google.com/maps?q=36.60212164144929,-119.46041557671056"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button  className='mt-2' >   Get Directions
+            <Button className='mt-2' >   Get Directions
               <ArrowRight className='size-4' /></Button>
           </Link>
         </div>
         <div className="overflow-hidden  border border-foreground/10 bg-black">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3449.5445946194645!2d71.52223177605894!3d30.1644336128748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b377bc78da87d%3A0xa0a0e131aaa9bddf!2sIron%20Heaven%20Gym!5e0!3m2!1sen!2sus!4v1771759534020!5m2!1sen!2sus"
+            src="https://www.google.com/maps?q=36.60212164144929,-119.46041557671056&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0, minHeight: 460 }}

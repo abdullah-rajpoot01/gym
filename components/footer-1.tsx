@@ -21,25 +21,14 @@ const Footer1 = () => {
   const phone = searchParams.get("phone") || "+92 300 0000000";
   const city = searchParams.get("city") || "Multan";
 
-  const linkSections: FooterLinksSection[] = [
-    {
-      title: "Quick Links",
-      links: [{ label: "Home", url: `/${createQuery({ gymName, city, phone })}` },
-      { label: "Why Us", url: `/${createQuery({ gymName, city, phone })}#why-us` },
-      { label: "Our Features", url: `/${createQuery({ gymName, city, phone })}#our-features` },
-      { label: "Pricing", url: `/${createQuery({ gymName, city, phone })}#pricing` },
-      { label: "Testimonials", url: `/${createQuery({ gymName, city, phone })}#testimonials` },
-      ],
-    },
-    {
-      title: "Need Help?",
-      links: [
-        { label: "About Us", url: `/about-us${createQuery({ gymName, city, phone })}` },
-        { label: "Contact Us", url: `/contact-us${createQuery({ gymName, city, phone })}` },
-        { label: "Privacy Policy", url: `/privacy-policy${createQuery({ gymName, city, phone })}` },
-      ],
-    },
+  const linkSections = [{ label: "Home", url: `/${createQuery({ gymName, city, phone })}` },
+  { label: "Programs", url: `/programs${createQuery({ gymName, city, phone })}` },
+  { label: "Coaches", url: `/coaches${createQuery({ gymName, city, phone })}` },
+  { label: "Pricing", url: `/pricing${createQuery({ gymName, city, phone })}` },
+  { label: "Testimonials", url: `/testimonials${createQuery({ gymName, city, phone })}` }
   ];
+
+
 
   return (
     <footer className="border-t border-black/10 bg-background ">
@@ -167,29 +156,12 @@ const Footer1 = () => {
               Quick Links
             </h3>
             <nav className="mt-5 grid gap-3">
-              <a className="transition-colors hover:text-primary group flex items-center gap-0.5" href="/">
-                Home
-                <ArrowRight className="size-3 hidden group-hover:block group-hover:translate-x-0.5 transition-all duration-150"/>
-              </a>
-              <a className="transition-colors hover:text-primary group flex items-center gap-0.5" href="/">
-                Programs
-                <ArrowRight className="size-3 hidden group-hover:block group-hover:translate-x-0.5 transition-all duration-150"/>
-              </a>
-              
-              <a className="transition-colors hover:text-primary group flex items-center gap-0.5" href="/">
-                Trainers
-                <ArrowRight className="size-3 hidden group-hover:block group-hover:translate-x-0.5 transition-all duration-150"/>
-              </a>
-              
-              <a className="transition-colors hover:text-primary group flex items-center gap-0.5" href="/">
-                Pricing
-                <ArrowRight className="size-3 hidden group-hover:block group-hover:translate-x-0.5 transition-all duration-150"/>
-              </a>
-              
-              <a className="transition-colors hover:text-primary group flex items-center gap-0.5" href="/">
-                 Join Now
-                <ArrowRight className="size-3 hidden group-hover:block group-hover:translate-x-0.5 transition-all duration-150"/>
-              </a>
+              {
+                linkSections.map((link) => (<Link className="transition-colors hover:text-primary group flex items-center gap-0.5" href={link.url}>
+                  {link.label}
+                  <ArrowRight className="size-3 hidden group-hover:block group-hover:translate-x-0.5 transition-all duration-150" />
+                </Link>))
+              }
             </nav>
           </div>
           <div>

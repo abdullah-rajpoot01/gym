@@ -28,22 +28,27 @@ export const NavMenu = (props: ComponentProps<typeof NavigationMenu>) => {
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-          <Link href={`/${createQuery({ gymName, city, phone })}#why-us`}>Why Us</Link>
+          <Link href={`/programs${createQuery({ gymName, city, phone })}`}>Programs</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-          <Link href={`/${createQuery({ gymName, city, phone })}#our-features`}>Our Features</Link>
+          <Link href={`/pricing${createQuery({ gymName, city, phone })}`}>Pricing</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-          <Link href={`/${createQuery({ gymName, city, phone })}#pricing`}>Pricing</Link>
+          <Link href={`/coaches${createQuery({ gymName, city, phone })}`}>Coaches</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-          <Link href={`/${createQuery({ gymName, city, phone })}#testimonials`}>Testimonials</Link>
+          <Link href={`/testimonials${createQuery({ gymName, city, phone })}`}>Testimonials</Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+      <NavigationMenuItem>
+        <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+          <Link href={`/about-us${createQuery({ gymName, city, phone })}`}>About Us</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
     </NavigationMenuList>
