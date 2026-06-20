@@ -31,13 +31,13 @@ const plusPoints = [
 export default function Features() {
   return (
     <div
-      className="mx-auto max-w-(--breakpoint-xl) px-6 py-24 text-center"
+      className="mx-auto max-w-(--breakpoint-xl) px-4 py-24 text-center"
       id="why-choose-us"
     >
       <strong className="font-medium text-muted-foreground text-sm uppercase tracking-wide">
-         Choose Your Future
+        Choose Your Future
       </strong>
-      <h2 className="mx-auto mt-5 max-w-4xl text-balance font-medium text-4xl/tight tracking-[-0.04em] sm:text-[2.75rem]">
+      <h2 className="mx-auto mt-5 max-w-4xl text-balance font-medium text-3xl/tight tracking-[-0.04em] sm:text-[2.75rem]">
         <strong className="text-primary"> Choose your</strong> Training Path
       </h2>
       <p className="mt-5 text-muted-foreground text-xl -tracking-[0.01em] sm:text-2xl">
@@ -47,8 +47,8 @@ export default function Features() {
       <div className="mt-16 flex flex-wrap justify-center gap-4">
         {plusPoints.map((plusPoint) => (
           <div
-            className="relative w-full overflow-hidden rounded-lg border bg-linear-to-b from-foreground/3 px-6 py-10 sm:max-w-xs transition-all duration-200 hover:scale-[1.04] hover:border hover:border-primary hover:shadow-[0_0_30px_10px_var(--primary)] shadow-primary/50"
-
+            className="relative w-full overflow-hidden  border bg-linear-to-b from-foreground/3 px-6 py-10 sm:max-w-xs transition-all duration-200 hover:scale-[1.04] hover:border hover:border-primary hover:shadow-[0_0_30px_10px_var(--primary)] shadow-primary/30"
+            data-aos="flip-right"
             key={plusPoint.title}
           >
             <BackgroundPattern />

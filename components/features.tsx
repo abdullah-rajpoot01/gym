@@ -58,11 +58,11 @@ const AboutFeatures = ({ gymName, city }: AboutFeaturesProps) => {
       <div className="z-10">
 
 
-        <h2 className="text-background dark:text-foreground text-pretty text-center font-medium text-4xl tracking-[-0.04em] sm:text-[2.75rem]">
+        <h2 className="text-foreground text-pretty text-center font-medium text-4xl tracking-[-0.04em] sm:text-[2.75rem]">
           What We Provide
         </h2>
-        <p className="text-background/80 dark:text-foreground/80 mt-3 text-pretty text-center  text-xl tracking-[-0.01em] sm:text-2xl">
-          Everything you need to stay fit, healthy, and motivated at <strong className='text-primary'>{gymName}</strong> Gym {city}.
+        <p className="text-foreground/80 mt-3 text-pretty text-center  text-xl tracking-[-0.01em] sm:text-2xl">
+          Everything you need to stay fit, healthy, and motivated at <strong className='text-primary'>{gymName} Gym</strong>  {city}.
         </p>
 
         <div className="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

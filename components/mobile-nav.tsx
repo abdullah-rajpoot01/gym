@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dialog"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import Link from "next/link"
-import { DollarSign, HeartPulse, Home, Menu, MenuSquare, User2Icon, UserCircle } from "lucide-react"
+import { DollarSign, Dumbbell, HeartPulse, Home, Menu, MenuSquare, User2Icon, UserCircle } from "lucide-react"
 import { ScrollArea } from "./ui/scroll-area"
 import { useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
@@ -37,14 +37,21 @@ export function MobileNavDialog() {
                 <DialogHeader className="p-6 pb-0 shrink-0">
                     <DialogTitle className="">
                         <Link onClick={closeDialog} href={`/${createQuery({ gymName, city, phone })}`} className="flex items-center gap-3">
-                            <Avatar className="size-9">
-                                <AvatarFallback className="bg-foreground text-background uppercase">
-                                    {gymName.charAt(0)}
-                                </AvatarFallback>
-                            </Avatar>
-                            <div className="flex items-center gap-1 font-bold leading-none tracking-wider text-xl">
-                                {gymName}
+
+                            <div className="relative w-8 h-8 flex justify-center items-center aspect-square rounded-lg shadow-lg border-2 border-foreground/80 overflow-hidden">
+                                <Dumbbell className="w-6 h-6" />
                             </div>
+
+
+                            <span className="min-w-0 leading-none">
+                                <span className="block text-base font-black uppercase tracking-wide text-foreground">
+                                    {gymName}
+                                </span>
+                                <span className="block text-[10px] font-semibold uppercase tracking-[0.28em] text-red-500">
+                                    Gym
+                                </span>
+                            </span>
+
                         </Link>
                     </DialogTitle>
                 </DialogHeader>

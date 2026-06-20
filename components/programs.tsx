@@ -87,7 +87,7 @@ const ProgramsComponent = () => {
                 {programs.map((plan) => (
                     <div data-aos="fade-left"
                         className={cn(
-                            "relative rounded-lg border border-border/85 bg-card p-6 hover:shadow-[0_0_30px_10px_var(--primary)] shadow-primary/50",
+                            "relative  border border-border/85 bg-card p-6 hover:shadow-[0_0_30px_10px_var(--primary)] shadow-primary/20",
                             {
                                 "border-2 border-primary py-10": true,
                             }

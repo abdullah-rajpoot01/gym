@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { useSearchParams } from "next/navigation";
 import { createQuery } from "@/lib/create-query";
-import { Dumbbell } from "lucide-react";
+import { ArrowRight, Clock, Dumbbell, Mail, MapPin, Phone } from "lucide-react";
 
 interface FooterLink {
   label: string
@@ -42,8 +42,8 @@ const Footer1 = () => {
   ];
 
   return (
-    <footer className="border-t border-white/10 bg-black ">
-      <div className="site-container py-14 px-8 text-sm text-zinc-400 md:py-18">
+    <footer className="border-t border-black/10 bg-background ">
+      <div className="site-container py-14 px-8 text-sm text-foreground md:py-18">
         <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr_1.25fr_1fr]">
           <div>
             <Link href={`/${createQuery({ gymName, city, phone })}`} className="flex items-center gap-3">
@@ -54,7 +54,7 @@ const Footer1 = () => {
 
 
               <span className="min-w-0 leading-none">
-                <span className="block text-base font-black uppercase tracking-wide text-white">
+                <span className="block text-base font-black uppercase tracking-wide text-foreground">
                   {gymName}
                 </span>
                 <span className="block text-[10px] font-semibold uppercase tracking-[0.28em] text-red-500">
@@ -64,16 +64,16 @@ const Footer1 = () => {
 
             </Link>
             <p className="mt-4 max-w-sm leading-7">
-              Strength focused gym in Multan for memberships, coaching,
+              Strength focused gym in {city} for memberships, coaching,
               bodybuilding, fat loss, and supplement pickup.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a
-                href="https://www.instagram.com/ironhaven141"
+                href={`https://www.instagram.com/${gymName}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Open Iron Heaven instagram"
-                className="grid size-10 place-items-center rounded-md border border-white/10 bg-black text-zinc-400 transition hover:border-primary/40 hover:bg-primary/10 hover:text-white"
+                className="grid size-10 place-items-center rounded-md border border-foreground/10 bg-background text-foreground transition hover:border-primary/40 hover:bg-primary/10 hover:text-foreground"
                 id="base-ui-_R_375qnnb_"
                 data-slot="tooltip-trigger"
               >
@@ -104,11 +104,11 @@ const Footer1 = () => {
                 <span className="sr-only">instagram</span>
               </a>
               <a
-                href="https://www.facebook.com/Ironheaven141/"
+                href={`https://www.facebook.com/${gymName}/`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Open Iron Heaven facebook"
-                className="grid size-10 place-items-center rounded-md border border-white/10 bg-black text-zinc-400 transition hover:border-primary/40 hover:bg-primary/10 hover:text-white"
+                className="grid size-10 place-items-center rounded-md border border-foreground/10 bg-background text-foreground transition hover:border-primary/40 hover:bg-primary/10 hover:text-foreground"
                 id="base-ui-_R_3b5qnnb_"
                 data-slot="tooltip-trigger"
               >
@@ -123,11 +123,11 @@ const Footer1 = () => {
                 <span className="sr-only">facebook</span>
               </a>
               <a
-                href="https://www.youtube.com/@IronHeaven141"
+                href={`https://www.youtube.com/@${gymName}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Open Iron Heaven youtube"
-                className="grid size-10 place-items-center rounded-md border border-white/10 bg-black text-zinc-400 transition hover:border-primary/40 hover:bg-primary/10 hover:text-white"
+                className="grid size-10 place-items-center rounded-md border border-foreground/10 bg-background text-foreground transition hover:border-primary/40 hover:bg-primary/10 hover:text-foreground"
                 id="base-ui-_R_3f5qnnb_"
                 data-slot="tooltip-trigger"
               >
@@ -142,11 +142,11 @@ const Footer1 = () => {
                 <span className="sr-only">youtube</span>
               </a>
               <a
-                href="https://www.tiktok.com/@ironheaven141"
+                href={`"https://www.tiktok.com/@${gymName}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Open Iron Heaven tiktok"
-                className="grid size-10 place-items-center rounded-md border border-white/10 bg-black text-zinc-400 transition hover:border-primary/40 hover:bg-primary/10 hover:text-white"
+                className="grid size-10 place-items-center rounded-md border border-foreground/10 bg-background text-foreground transition hover:border-primary/40 hover:bg-primary/10 hover:text-foreground"
                 id="base-ui-_R_3j5qnnb_"
                 data-slot="tooltip-trigger"
               >
@@ -163,29 +163,37 @@ const Footer1 = () => {
             </div>
           </div>
           <div>
-            <h3 className="font-heading text-sm font-black uppercase tracking-[0.28em] text-white">
+            <h3 className="font-heading text-sm font-black uppercase tracking-[0.28em] text-foreground">
               Quick Links
             </h3>
             <nav className="mt-5 grid gap-3">
-              <a className="transition-colors hover:text-white" href="/">
+              <a className="transition-colors hover:text-primary group flex items-center gap-0.5" href="/">
                 Home
+                <ArrowRight className="size-3 hidden group-hover:block group-hover:translate-x-0.5 transition-all duration-150"/>
               </a>
-              <a className="transition-colors hover:text-white" href="/programs">
+              <a className="transition-colors hover:text-primary group flex items-center gap-0.5" href="/">
                 Programs
+                <ArrowRight className="size-3 hidden group-hover:block group-hover:translate-x-0.5 transition-all duration-150"/>
               </a>
-              <a className="transition-colors hover:text-white" href="/coaches">
+              
+              <a className="transition-colors hover:text-primary group flex items-center gap-0.5" href="/">
                 Trainers
+                <ArrowRight className="size-3 hidden group-hover:block group-hover:translate-x-0.5 transition-all duration-150"/>
               </a>
-              <a className="transition-colors hover:text-white" href="/plans">
+              
+              <a className="transition-colors hover:text-primary group flex items-center gap-0.5" href="/">
                 Pricing
+                <ArrowRight className="size-3 hidden group-hover:block group-hover:translate-x-0.5 transition-all duration-150"/>
               </a>
-              <a className="transition-colors hover:text-white" href="/join">
-                Join Now
+              
+              <a className="transition-colors hover:text-primary group flex items-center gap-0.5" href="/">
+                 Join Now
+                <ArrowRight className="size-3 hidden group-hover:block group-hover:translate-x-0.5 transition-all duration-150"/>
               </a>
             </nav>
           </div>
           <div>
-            <h3 className="font-heading text-sm font-black uppercase tracking-[0.28em] text-white">
+            <h3 className="font-heading text-sm font-black uppercase tracking-[0.28em] text-foreground">
               Contact
             </h3>
             <div className="mt-5 grid gap-5">
@@ -193,112 +201,52 @@ const Footer1 = () => {
                 href="https://share.google/QqrDdwCNao5wRTUKp"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex gap-4 leading-6 transition-colors hover:text-white"
+                className="flex gap-4 leading-6 transition-colors hover:text-foreground group"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={24}
-                  height={24}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-map-pin mt-1 size-4 shrink-0 text-primary"
-                  aria-hidden="true"
-                >
-                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                  <circle cx={12} cy={10} r={3} />
-                </svg>
-                <span>
-                  Sultan Ghee Mill, Gate # 2 Vehari Road, Fatima Jinnah Colony,
-                  Multan 66000
+                <MapPin className='size-4 group-hover:text-primary' />
+                <span className="group-hover:text-primary">
+                  XYX Street Sector 2 Phase 1 , {city}
                 </span>
               </a>
               <a
-                href="tel:+923078202141"
-                className="flex items-center gap-4 transition-colors hover:text-white"
+                href={`tel:+${phone}`}
+                className="flex items-center gap-4 transition-colors hover:text-foreground group"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={24}
-                  height={24}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-phone size-4 shrink-0 text-primary"
-                  aria-hidden="true"
-                >
-                  <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
-                </svg>
-                <span>+92 307 8202141</span>
+                <Phone className='size-4 group-hover:text-primary' />
+                <span className="group-hover:text-primary">+{phone}</span>
               </a>
               <a
-                href="mailto:ironhaven141@gmail.com"
-                className="flex items-center gap-4 transition-colors hover:text-white"
+                href={`mailto:${gymName}@gmail.com`}
+                className="flex items-center gap-4 transition-colors hover:text-foreground group"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={24}
-                  height={24}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-mail size-4 shrink-0 text-primary"
-                  aria-hidden="true"
-                >
-                  <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
-                  <rect x={2} y={4} width={20} height={16} rx={2} />
-                </svg>
-                <span>ironhaven141@gmail.com</span>
+                <Mail className='size-4 group-hover:text-primary' />
+                <span className="group-hover:text-primary">{gymName}@gmail.com</span>
               </a>
             </div>
           </div>
           <div>
-            <h3 className="font-heading text-sm font-black uppercase tracking-[0.28em] text-white">
+            <h3 className="font-heading text-sm font-black uppercase tracking-[0.28em] text-foreground">
               Hours
             </h3>
             <div className="mt-5 flex gap-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={24}
-                height={24}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-clock mt-1 size-4 shrink-0 text-primary"
-                aria-hidden="true"
-              >
-                <circle cx={12} cy={12} r={10} />
-                <path d="M12 6v6l4 2" />
-              </svg>
+              <Clock className='size-4' />
               <div className="grid gap-3 leading-6">
                 <div>
-                  <div className="font-bold text-white">For Gents</div>
+                  <div className="font-bold text-foreground">For Gents</div>
                   <div>Morning: 6:30 AM to 9:30 AM</div>
                   <div>Evening: 5:00 PM to 11:00 PM</div>
                 </div>
                 <div>
-                  <div className="font-bold text-white">For Female</div>
+                  <div className="font-bold text-foreground">For Female</div>
                   <div>Morning: 10:00 AM to 12:30 PM</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="mt-14 grid gap-6 border-t border-white/10 pt-8 md:grid-cols-[1fr_auto] md:items-end">
+        <div className="mt-14 grid gap-6 border-t border-foreground/10 pt-8 md:grid-cols-[1fr_auto] md:items-end">
           <div className="grid gap-2">
-            <div>© 2026 Iron Heaven Gym. All rights reserved.</div>
+            <div>© 2026 {gymName} Gym. All rights reserved.</div>
             <div className="flex items-center gap-1">
               <span>Made with</span>
               <svg
@@ -318,17 +266,17 @@ const Footer1 = () => {
               </svg>
               <span>by</span>
               <a
-                href="https://usmanliaqat.com/"
+                href="https://eligodigital.pages.dev/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold text-white transition-colors hover:text-primary"
+                className="font-bold text-foreground transition-colors hover:text-primary"
               >
-                Usman Liaqat
+                Abdullah Rajpoot
               </a>
             </div>
           </div>
           <nav className="flex flex-wrap gap-6 text-xs md:justify-end">
-            <a href="/sitemap.xml" className="transition-colors hover:text-white">
+            <a href="/sitemap.xml" className="transition-colors hover:text-foreground">
               Sitemap
             </a>
           </nav>

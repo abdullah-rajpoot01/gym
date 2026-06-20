@@ -27,7 +27,7 @@ const Navbar = () => {
 
 
           <span className="min-w-0 leading-none">
-            <span className="block text-base font-black uppercase tracking-wide text-white">
+            <span className="block text-base font-black uppercase tracking-wide text-foreground">
               {gymName}
             </span>
             <span className="block text-[10px] font-semibold uppercase tracking-[0.28em] text-red-500">
@@ -42,13 +42,13 @@ const Navbar = () => {
 
         <div className="flex items-center gap-3">
           <Button onClick={() => router.push(`/contact-us${createQuery({ gymName, city, phone })}`)}
-            className="hidden rounded-full sm:inline-flex hover:animate-pulsing hover:animate-iteration-count-infinite"
+            className="hidden  sm:inline-flex hover:animate-pulsing hover:animate-iteration-count-infinite"
             variant="outline"
           >
             Contact Us
           </Button>
           <a href={`tel:+${phone}`}>
-            <Button className="hidden rounded-full sm:inline-flex hover:animate-pulsing hover:animate-iteration-count-infinite">Call Now</Button>
+            <Button className="hidden  sm:inline-flex hover:animate-pulsing hover:animate-iteration-count-infinite">Call Now</Button>
           </a>
           {/* Mobile Menu */}
           <div className="md:hidden">
