@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/navbar";
 import Footer1 from "@/components/footer-1";
 import AOSInit from "@/components/init-aos";
-import { DialogBanner } from "@/components/dialog-banner";
 import { Suspense } from "react";
 import WhatsAppButton from "@/components/whatsapp-button";
 
@@ -23,7 +22,7 @@ const geistMono = Geist_Mono({
 
 
 export const metadata: Metadata = {
-  title: "Best Unisex Fitness Center for Men & Women",
+  title: "Best Fitness Center for Men & Women",
 
   description:
     "Looking for the best gym in your city? We offer separate facilities for men and women, expert fitness trainers, modern cardio and strength equipment, weight loss programs, and affordable membership packages. Start your fitness journey today.",
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://mygyms.pages.dev"),
 
   openGraph: {
-    title: "Best Unisex Fitness Center for Men & Women",
+    title: "Best Fitness Center for Men & Women",
 
     description:
       "Looking for the best gym in your city? We offer separate facilities for men and women, expert fitness trainers, modern cardio and strength equipment, weight loss programs, and affordable membership packages. Start your fitness journey today.",

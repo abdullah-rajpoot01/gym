@@ -170,7 +170,7 @@ const Footer1 = () => {
             </h3>
             <div className="mt-5 grid gap-5">
               <a
-                href="https://share.google/QqrDdwCNao5wRTUKp"
+                href="https://share.google/QqrDdwCNao5UKp"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex gap-4 leading-6 transition-colors hover:text-foreground group"
