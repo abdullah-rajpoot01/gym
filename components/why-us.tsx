@@ -47,7 +47,7 @@ export default function Features() {
       <div className="mt-16 flex flex-wrap justify-center gap-4">
         {plusPoints.map((plusPoint) => (
           <div
-            className="relative w-full overflow-hidden  border bg-linear-to-b from-foreground/3 px-6 py-10 sm:max-w-xs transition-all duration-200 hover:scale-[1.04] hover:border hover:border-primary hover:shadow-[0_0_30px_10px_var(--primary)] shadow-primary/30"
+            className="relative w-full overflow-hidden  border bg-linear-to-b from-foreground/3 px-6 py-10 sm:max-w-xs transition-all duration-200 hover:scale-[1.04] hover:border hover:border-primary hover:shadow-[0_0_30px_10px_var(--primary)] shadow-primary/10"
             data-aos="flip-right"
             key={plusPoint.title}
           >
