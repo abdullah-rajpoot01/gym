@@ -37,11 +37,12 @@ export function GymProvider({ children }: { children: React.ReactNode }) {
 
     const getLead = async () => {
       try {
-        setLoading(true);
+        setLoading(true); 
 
         const response = await fetch(
-          `https://gym-leads-with-sveltia-cms.pages.dev/content/leads/05a6555de017.json`
+          `https://gym-leads-with-sveltia-cms.pages.dev/content/leads/${id}.json`
         );
+
 
         if (!response.ok) throw new Error("Failed to fetch lead");
 
@@ -63,7 +64,7 @@ export function GymProvider({ children }: { children: React.ReactNode }) {
 
     hasData: !!lead,
 
-    gymName: lead?.name || searchParams.get("name") || "Your Fitness",
+    gymName: lead?.name || searchParams.get("name") || "Your Fitness ",
     email: lead?.email || `${lead?.name || "gym"}@gmail.com`,
     phone: lead?.mobiles?.[0] || searchParams.get("phone") || "92 300 0000000",
     whatsapp:
