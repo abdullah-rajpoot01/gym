@@ -1,6 +1,7 @@
-import { CircleCheck, Dot } from "lucide-react";
+import {  Dot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { useGym } from "@/context/use-gym";
 
 const plans = [
   {
@@ -47,13 +48,9 @@ const plans = [
     buttonText: "Call Now For Booking",
   },
 ];
-interface PricingProps {
-  gymName: string;
-  city: string;
-  phone: string;
-}
-const Pricing = ({ gymName, city, phone }: PricingProps) => {
 
+const Pricing = () => {
+  const { gymName, phone, city,  } = useGym();
   return (
     <div id="pricing" className="px-6 py-20 ">
       <h2 className="text-center font-medium text-4xl tracking-[-0.04em] sm:text-[2.75rem]">

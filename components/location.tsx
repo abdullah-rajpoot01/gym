@@ -1,14 +1,11 @@
 import { ArrowRight, Clock, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from './ui/button';
+import { useGym } from '@/context/use-gym';
 
-interface SectionProps {
-  gymName: string;
-  phone: string;
-  city: string;
-}
-
-const Location = ({ gymName, city, phone }: SectionProps) => {
+const Location = () => {
+  const { gymName, phone, googleMapShareLink, googleMapPinUrl, loading, address, email } = useGym();
+  if (loading) return null;
   return (
     <section className="py-16 md:py-24 px-4">
       <div className="site-container grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
@@ -19,14 +16,14 @@ const Location = ({ gymName, city, phone }: SectionProps) => {
           </h2>
           <div className="mt-8 grid gap-5 text-sm text-foreground/90">
             <a
-              href="https://www.google.com/maps?q=36.60212164144929,-119.46041557671056"
+              href={googleMapShareLink}
               target="_blank"
               rel="noopener noreferrer"
               className="flex gap-4 transition hover:text-foreground"
             >
               <MapPin className='size-4' />
               <span>
-                XYX Street Sector 2 Phase 1 , {city}
+                {address}
               </span>
             </a>
             <a
@@ -52,7 +49,7 @@ const Location = ({ gymName, city, phone }: SectionProps) => {
             </div>
           </div>
           <Link
-            href="https://www.google.com/maps?q=36.60212164144929,-119.46041557671056"
+            href={googleMapShareLink}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -62,7 +59,7 @@ const Location = ({ gymName, city, phone }: SectionProps) => {
         </div>
         <div className="overflow-hidden  border border-foreground/10 bg-black">
           <iframe
-            src="https://www.google.com/maps?q=36.60212164144929,-119.46041557671056&output=embed"
+            src={googleMapPinUrl}
             width="100%"
             height="100%"
             style={{ border: 0, minHeight: 460 }}

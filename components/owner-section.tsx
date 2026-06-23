@@ -1,13 +1,9 @@
 import { Verified } from "lucide-react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { useGym } from "@/context/use-gym";
 
-interface SectionProps {
-    gymName: string;
-    phone: string;
-    city: string;
-}
-export default function OwnerSection({ gymName, city }: SectionProps) {
+
+export default function OwnerSection() {
+      const { gymName,  city,  } = useGym();
     return (
         <section className="py-16 md:py-24 px-7">
             <div className=" grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">

@@ -1,13 +1,7 @@
-import { ArrowUpRight, CirclePlay, Verified } from "lucide-react";
-import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-interface SectionProps {
-  gymName: string;
-  phone: string;
-  city: string;
-}
-export default function VideoSection({gymName,city,phone}:SectionProps) {
+import { Verified } from "lucide-react";
+
+export default function VideoSection() {
+
     return (
         <div className="flex  items-center justify-center px-4 py-12">
             <div className="mx-auto grid w-full gap-16 lg:grid-cols-2">

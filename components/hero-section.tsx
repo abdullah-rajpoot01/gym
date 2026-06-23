@@ -4,13 +4,12 @@ import { Button } from "@/components/ui/button";
 import CarouselWithFooter from "./carousel-07";
 import Typewriter from "./typewriter";
 import { createQuery } from "@/lib/create-query";
+import { useGym } from "@/context/use-gym";
 
-interface SectionProps {
-    gymName: string;
-    phone: string;
-    city: string;
-}
-export default function HeroSection({ gymName, city, phone }: SectionProps) {
+
+export default function HeroSection() {
+    const gymParams = useGym();
+    const { gymName, phone, city,  } = gymParams;
     return (
         <section className="pt-20 pb-8 px-4 md:px-8 min-h-screen">
             <div className=" grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
@@ -37,7 +36,7 @@ export default function HeroSection({ gymName, city, phone }: SectionProps) {
                             <Button> Call Now</Button>
                         </Link>
                         <Link
-                            href={`/contact-us${createQuery({ phone, gymName, city })}`}
+                            href={`/contact-us${createQuery(gymParams)}`}
                         >
                             <Button variant={"outline"}> Ask About Coaching</Button>
                         </Link>

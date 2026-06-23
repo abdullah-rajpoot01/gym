@@ -1,18 +1,16 @@
-import React from 'react'
 import { Button } from './ui/button';
 import Link from 'next/link';
 import { createQuery } from '@/lib/create-query';
-interface SectionProps {
-  gymName: string;
-  phone: string;
-  city: string;
-}
-const Stats = ({gymName,city,phone}:SectionProps) => { 
+import { useGym } from '@/context/use-gym';
+
+const Stats = () => {
+  const gymParams = useGym();
+  const { gymName, phone, } = gymParams;
   return (
     <section id="coach" className=" py-16 md:py-24 px-4">
       <div className=" grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
         <div data-aos="fade-right" className="relative overflow-hidden  border border-foreground/10 bg-background">
-          <img 
+          <img
             alt="Haseeb Mian transformation"
             loading="lazy"
             width={900}
@@ -70,12 +68,12 @@ const Stats = ({gymName,city,phone}:SectionProps) => {
             <Link
               href={`tel:+${phone}`}
             >
-             <Button> Call Now</Button>
+              <Button> Call Now</Button>
             </Link>
             <Link
-              href={`/contact-us${createQuery({ phone, gymName, city })}`}
+              href={`/contact-us${createQuery(gymParams)}`}
             >
-             <Button variant={"outline"}> Ask About Coaching</Button>
+              <Button variant={"outline"}> Ask About Coaching</Button>
             </Link>
           </div>
         </div>

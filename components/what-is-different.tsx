@@ -1,9 +1,7 @@
-import React from 'react'
-interface WhatTakeUsApartProps {
-  gymName: string;
-  city: string;
-}
-const WhatTakeUsApart = ({gymName,city}:WhatTakeUsApartProps) => {
+import { useGym } from "@/context/use-gym";
+
+const WhatTakeUsApart = () => {
+    const { gymName, city, } = useGym();
     return (
         <section className="w-full bg-background py-24">
             <div className="max-w-7xl mx-auto px-6 text-center">

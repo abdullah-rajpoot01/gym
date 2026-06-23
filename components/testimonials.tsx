@@ -1,56 +1,54 @@
+"use client"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { useGym } from "@/context/use-gym";
 
+const Testimonials = () => {
+  const { gymName, city } = useGym();
 
-interface TestimonialsProps {
-  gymName: string;
-  city: string;
-}
-const Testimonials = ({ gymName, city }: TestimonialsProps) => {
-
-const testimonials = [
-  {
-    id: 1,
-    name: "Ali Hassan",
-    designation: "Student",
-    testimonial:
-      `${gymName} Gym has helped me stay consistent with my workouts. The environment is motivating and the trainers are always ready to help.`,
-  },
-  {
-    id: 2,
-    name: "Muhammad Bilal",
-    designation: "Business Owner",
-    testimonial:
-      "I've been training here for several months and have seen great improvements in my fitness and energy levels. Highly recommended.",
-  },
-  {
-    id: 3,
-    name: "Usman Khan",
-    designation: "Fitness Enthusiast",
-    testimonial:
-      "The gym has all the essential equipment I need for strength training. It's clean, affordable, and has a great atmosphere.",
-  },
-  {
-    id: 4,
-    name: "Ayesha Noor",
-    designation: "Student",
-    testimonial:
-      `I was nervous about joining a gym, but the friendly environment at ${gymName} Gym made me feel comfortable from day one.`,
-  },
-  {
-    id: 5,
-    name: "Hamza Ahmed",
-    designation: "Office Worker",
-    testimonial:
-      `The membership fees are reasonable and the trainers provide useful guidance. It's the best gym experience I've had in ${city}.`,
-  },
-  {
-    id: 6,
-    name: "Abdullah Javed",
-    designation: "College Student",
-    testimonial:
-      "Great place to work on your fitness goals. The equipment is well maintained and the atmosphere keeps me motivated every day.",
-  },
-];
+  const testimonials = [
+    {
+      id: 1,
+      name: "Ali Hassan",
+      designation: "Student",
+      testimonial:
+        `${gymName} Gym has helped me stay consistent with my workouts. The environment is motivating and the trainers are always ready to help.`,
+    },
+    {
+      id: 2,
+      name: "Muhammad Bilal",
+      designation: "Business Owner",
+      testimonial:
+        "I've been training here for several months and have seen great improvements in my fitness and energy levels. Highly recommended.",
+    },
+    {
+      id: 3,
+      name: "Usman Khan",
+      designation: "Fitness Enthusiast",
+      testimonial:
+        "The gym has all the essential equipment I need for strength training. It's clean, affordable, and has a great atmosphere.",
+    },
+    {
+      id: 4,
+      name: "Ayesha Noor",
+      designation: "Student",
+      testimonial:
+        `I was nervous about joining a gym, but the friendly environment at ${gymName} Gym made me feel comfortable from day one.`,
+    },
+    {
+      id: 5,
+      name: "Hamza Ahmed",
+      designation: "Office Worker",
+      testimonial:
+        `The membership fees are reasonable and the trainers provide useful guidance. It's the best gym experience I've had in ${city}.`,
+    },
+    {
+      id: 6,
+      name: "Abdullah Javed",
+      designation: "College Student",
+      testimonial:
+        "Great place to work on your fitness goals. The equipment is well maintained and the atmosphere keeps me motivated every day.",
+    },
+  ];
   return <div id="testimonials" className="relative px-6 py-20 bg-background/80 bg-cover bg-center bg-fixed">
 
 

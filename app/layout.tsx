@@ -2,12 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Oswald } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/navbar";
-import Footer1 from "@/components/footer-1";
-import AOSInit from "@/components/init-aos";
-import { Suspense } from "react";
-import WhatsAppButton from "@/components/whatsapp-button";
-import ThemeMode from "@/components/change-theme";
+import { GymProvider } from "@/context/use-gym";
 
 const playfairDisplay = Oswald({ subsets: ['latin'], variable: '--font-serif' });
 
@@ -74,14 +69,7 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-serif", playfairDisplay.variable)}
     >
       <body suppressHydrationWarning className="min-h-screen dar max-w-7xl flex flex-col justify-between relative mx-auto">
-        <Suspense fallback={null}>
-          <Navbar />
-          {children}
-          <Footer1 />
-          <AOSInit />
-          <WhatsAppButton />
-          <ThemeMode />
-        </Suspense>
+        <GymProvider>{children}</GymProvider>
       </body>
     </html>
   );

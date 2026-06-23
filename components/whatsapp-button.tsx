@@ -1,16 +1,12 @@
 "use client";
-
-import { useSearchParams } from "next/navigation";
+import { useGym } from "@/context/use-gym";
 import { WhatsApp } from "./social-icons";
 
 
 
 export default function WhatsAppButton() {
-    const searchParams = useSearchParams();
-
-    const phone = searchParams.get("phone") || "+92 300 0000000";
-
-    const whatsappUrl = `https://wa.me/${phone}`;
+    const {  whatsapp ,loading} = useGym();
+    const whatsappUrl = `https://wa.me/${whatsapp}`;
 
     return (
         <a

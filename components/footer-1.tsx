@@ -1,31 +1,18 @@
 "use client"
 import Link from "next/link";
-import { Avatar, AvatarFallback } from "./ui/avatar";
-import { useSearchParams } from "next/navigation";
 import { createQuery } from "@/lib/create-query";
 import { ArrowRight, Clock, Dumbbell, Mail, MapPin, Phone } from "lucide-react";
+import { useGym } from "@/context/use-gym";
 
-interface FooterLink {
-  label: string
-  url: string
-}
-interface FooterLinksSection {
-  title: string
-  links: FooterLink[]
-}
 
 const Footer1 = () => {
-  const searchParams = useSearchParams();
-
-  const gymName = searchParams.get("name") || "Rajpoot";
-  const phone = searchParams.get("phone") || "+92 300 0000000";
-  const city = searchParams.get("city") || "Multan";
-
-  const linkSections = [{ label: "Home", url: `/${createQuery({ gymName, city, phone })}` },
-  { label: "Programs", url: `/programs${createQuery({ gymName, city, phone })}` },
-  { label: "Coaches", url: `/coaches${createQuery({ gymName, city, phone })}` },
-  { label: "Pricing", url: `/pricing${createQuery({ gymName, city, phone })}` },
-  { label: "Testimonials", url: `/testimonials${createQuery({ gymName, city, phone })}` }
+  const gymParams = useGym();
+  const { gymName, phone, city, address, googleMapShareLink, email, loading } = gymParams;
+  const linkSections = [{ label: "Home", url: `/${createQuery(gymParams)}` },
+  { label: "Programs", url: `/programs${createQuery(gymParams)}` },
+  { label: "Coaches", url: `/coaches${createQuery(gymParams)}` },
+  { label: "Pricing", url: `/pricing${createQuery(gymParams)}` },
+  { label: "Testimonials", url: `/testimonials${createQuery(gymParams)}` }
   ];
 
 
@@ -35,7 +22,7 @@ const Footer1 = () => {
       <div className="site-container py-14 px-8 text-sm text-foreground md:py-18">
         <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr_1.25fr_1fr]">
           <div>
-            <Link href={`/${createQuery({ gymName, city, phone })}`} className="flex items-center gap-3">
+            <Link href={`/${createQuery(gymParams)}`} className="flex items-center gap-3">
 
               <div className="relative w-8 h-8 flex justify-center items-center aspect-square rounded-lg shadow-lg border-2 border-foreground/80 overflow-hidden">
                 <Dumbbell className="w-6 h-6" />
@@ -157,7 +144,7 @@ const Footer1 = () => {
             </h3>
             <nav className="mt-5 grid gap-3">
               {
-                linkSections.map((link) => (<Link className="transition-colors hover:text-primary group flex items-center gap-0.5" href={link.url}>
+                linkSections.map((link, index) => (<Link key={index} className="transition-colors hover:text-primary group flex items-center gap-0.5" href={link.url}>
                   {link.label}
                   <ArrowRight className="size-3 hidden group-hover:block group-hover:translate-x-0.5 transition-all duration-150" />
                 </Link>))
@@ -170,14 +157,14 @@ const Footer1 = () => {
             </h3>
             <div className="mt-5 grid gap-5">
               <a
-                href="https://share.google/QqrDdwCNao5UKp"
+                href={googleMapShareLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex gap-4 leading-6 transition-colors hover:text-foreground group"
               >
                 <MapPin className='size-4 group-hover:text-primary' />
                 <span className="group-hover:text-primary">
-                  XYX Street Sector 2 Phase 1 , {city}
+                  {address}
                 </span>
               </a>
               <a
@@ -188,11 +175,11 @@ const Footer1 = () => {
                 <span className="group-hover:text-primary">+{phone}</span>
               </a>
               <a
-                href={`mailto:${gymName}@gmail.com`}
+                href={`mailto:${email}`}
                 className="flex items-center gap-4 transition-colors hover:text-foreground group"
               >
                 <Mail className='size-4 group-hover:text-primary' />
-                <span className="group-hover:text-primary">{gymName}@gmail.com</span>
+                <span className="group-hover:text-primary">{email}</span>
               </a>
             </div>
           </div>

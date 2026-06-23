@@ -9,46 +9,41 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { useSearchParams } from "next/navigation";
 import { createQuery } from "@/lib/create-query";
+import { useGym } from "@/context/use-gym";
 
 export const NavMenu = (props: ComponentProps<typeof NavigationMenu>) => {
-  const searchParams = useSearchParams();
-
-  const gymName = searchParams.get("name") || "Rajpoot";
-  const phone = searchParams.get("phone") || "+92 300 0000000";
-  const city = searchParams.get("city") || "Multan";
-
+  const gymParams = useGym();
   return <NavigationMenu {...props}>
     <NavigationMenuList className="space-x-0 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start data-[orientation=vertical]:justify-start">
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-          <Link href={`/${createQuery({ gymName, city, phone })}`}>Home</Link>
+          <Link href={`/${createQuery(gymParams)}`}>Home</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-          <Link href={`/programs${createQuery({ gymName, city, phone })}`}>Programs</Link>
+          <Link href={`/programs${createQuery(gymParams)}`}>Programs</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-          <Link href={`/pricing${createQuery({ gymName, city, phone })}`}>Pricing</Link>
+          <Link href={`/pricing${createQuery(gymParams)}`}>Pricing</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-          <Link href={`/coaches${createQuery({ gymName, city, phone })}`}>Coaches</Link>
+          <Link href={`/coaches${createQuery(gymParams)}`}>Coaches</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-          <Link href={`/testimonials${createQuery({ gymName, city, phone })}`}>Testimonials</Link>
+          <Link href={`/testimonials${createQuery(gymParams)}`}>Testimonials</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-          <Link href={`/about-us${createQuery({ gymName, city, phone })}`}>About Us</Link>
+          <Link href={`/about-us${createQuery(gymParams)}`}>About Us</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
     </NavigationMenuList>

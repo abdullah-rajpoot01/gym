@@ -1,3 +1,4 @@
+import { useGym } from "@/context/use-gym";
 import {
   Dumbbell,
   Users,
@@ -45,11 +46,9 @@ const features = [
     icon: HeartHandshake,
   },
 ];
-interface AboutFeaturesProps {
-  gymName: string;
-  city: string;
-}
-const AboutFeatures = ({ gymName, city }: AboutFeaturesProps) => {
+
+const AboutFeatures = () => {
+    const { gymName,  city  } = useGym();
   return (
     <div id="our-features" className="mx-auto flex max-w-7xl flex-col px-6 py-30 relative">
 

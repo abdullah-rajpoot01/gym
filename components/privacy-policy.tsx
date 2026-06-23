@@ -1,6 +1,6 @@
 "use client"
+import { useGym } from '@/context/use-gym'
 import React from 'react'
-import { useSearchParams } from 'next/navigation';
 
 export interface LegalPolicy2Props {
     title?: string
@@ -14,15 +14,9 @@ const LegalPolicy2: React.FC<LegalPolicy2Props> = ({
     title = "Privacy Policy",
     effectiveDate = "Effective date: June 15, 2026",
 
-    variant = 'light',
 }) => {
-    const isDark = variant === 'dark'
-    const searchParams = useSearchParams();
-
-    const gymName = searchParams.get("name") || "Rajpoot";
-    const phone = searchParams.get("phone") || "+92 300 0000000";
-    const city = searchParams.get("city") || "Multan";
-
+    const { gymName, city,phone,  mode } = useGym();
+    const isDark = mode === "light" ? false : true;
     const sections = [
         {
             title: "Information We Collect",
