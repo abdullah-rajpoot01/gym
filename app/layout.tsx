@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Oswald } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { GymProvider } from "@/context/use-gym";
+import { Suspense } from "react";
 
 const playfairDisplay = Oswald({ subsets: ['latin'], variable: '--font-serif' });
 
@@ -69,7 +70,9 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-serif", playfairDisplay.variable)}
     >
       <body suppressHydrationWarning className="min-h-screen dar max-w-7xl flex flex-col justify-between relative mx-auto">
-        <GymProvider>{children}</GymProvider>
+        <Suspense fallback={null}>
+          <GymProvider>{children}</GymProvider>
+        </Suspense>
       </body>
     </html>
   );
