@@ -22,17 +22,15 @@ export default function Home() {
 
       <VideoSection />
 
+      <Pricing />
+
       <ProgramsComponent />
 
       <OwnerSection />
 
-
       <AboutFeatures />
 
       <WhatTakeUsApart />
-
-      <Pricing />
-
 
       <Team />
 

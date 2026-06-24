@@ -8,6 +8,9 @@ import {
   ShieldCheckIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { createQuery } from "@/lib/create-query";
+import { useGym } from "@/context/use-gym";
 
 const plusPoints = [
   {
@@ -29,6 +32,7 @@ const plusPoints = [
 ];
 
 export default function Features() {
+  const gymParams = useGym();
   return (
     <div
       className="mx-auto max-w-(--breakpoint-xl) px-4 py-24 text-center"
@@ -61,9 +65,11 @@ export default function Features() {
               <p className="text-balance text-base text-muted-foreground">
                 {plusPoint.description}
               </p>
-              <Button className="mt-6">
-                Learn More <ArrowUpRightIcon />
-              </Button>
+              <Link href={`/contact-us${createQuery(gymParams)}`}>
+                <Button className="mt-6">
+                  Learn More <ArrowUpRightIcon />
+                </Button>
+              </Link>
             </div>
           </div>
         ))}
