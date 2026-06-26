@@ -3,6 +3,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { notFound, useParams, useSearchParams } from "next/navigation";
 import { Lead } from "@/types/lead";
+import Loading from "@/components/loading";
 
 type GymContextType = {
   loading: boolean;
@@ -100,7 +101,7 @@ export function GymProvider({ children }: { children: React.ReactNode }) {
   };
 
   if (loading) {
-    return null;
+    return <Loading />;
   }
   if (leadNotFound) {
     notFound()
