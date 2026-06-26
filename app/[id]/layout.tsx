@@ -5,7 +5,7 @@ import AOSInit from "@/components/init-aos";
 import { Suspense } from "react";
 import WhatsAppButton from "@/components/whatsapp-button";
 import ThemeMode from "@/components/change-theme";
-import { useGym } from "@/context/use-gym";
+import { GymProvider, useGym } from "@/context/use-gym";
 
 const Layout = ({
     children,
@@ -15,14 +15,18 @@ const Layout = ({
     const { loading } = useGym();
     if (loading) return null;
     return (
-        <div>        <Suspense fallback={null}>
-            <Navbar />
-            {children}
-            <Footer1 />
-            <AOSInit />
-            <WhatsAppButton />
-            <ThemeMode />
-        </Suspense></div>
+        <div>
+            <Suspense fallback={null}>
+                <GymProvider>
+                    <Navbar />
+                    {children}
+                    <Footer1 />
+                    <AOSInit />
+                    <WhatsAppButton />
+                    <ThemeMode />
+                </GymProvider>
+            </Suspense>
+        </div>
     )
 }
 

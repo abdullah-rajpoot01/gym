@@ -70,9 +70,7 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-serif", playfairDisplay.variable)}
     >
       <body suppressHydrationWarning className="min-h-screen dar max-w-7xl flex flex-col justify-between relative mx-auto">
-        <Suspense fallback={null}>
-          <GymProvider>{children}</GymProvider>
-        </Suspense>
+        {children}
       </body>
     </html>
   );
