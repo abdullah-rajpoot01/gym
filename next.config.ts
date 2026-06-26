@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // 1. MUST be at the root level of your configuration object, NOT inside experimental
+  htmlLimitedBots: /.*/,
+
   allowedDevOrigins: ['192.168.43.103'],
 };
 
