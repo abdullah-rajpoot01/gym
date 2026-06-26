@@ -4,19 +4,18 @@ import { NavMenu } from "./nav-menu";
 import { MobileNavDialog } from "./mobile-nav";
 import Link from "next/link";
 import { useRouter,  } from "next/navigation";
-import { createQuery } from "@/lib/create-query";
 import { Dumbbell } from "lucide-react";
 import { useGym } from "@/context/use-gym";
 
 const Navbar = () => {
   const router = useRouter();
   const gymParams = useGym();
-  const { gymName, phone } = gymParams;
+  const { gymName, phone,id,createRoute } = gymParams;
 
   return (
     <nav className="fixed top-0 z-50 left-1/2 -translate-x-1/2 h-16 w-full max-w-6xl  border border-border/85 bg-background shadow-xs/3">
       <div className="flex h-full items-center justify-between px-4  ">
-        <Link href={`/${createQuery(gymParams)}`} className="flex items-center gap-3">
+        <Link href={createRoute("")} className="flex items-center gap-3">
 
           <div className="relative w-8 h-8 flex justify-center items-center aspect-square rounded-lg shadow-lg border-2 border-foreground/80 overflow-hidden">
             <Dumbbell className="w-6 h-6" />
@@ -38,7 +37,7 @@ const Navbar = () => {
         <NavMenu className="hidden md:block" />
 
         <div className="flex items-center gap-3">
-          <Button onClick={() => router.push(`/contact-us${createQuery(gymParams)}`)}
+          <Button onClick={() => router.push(createRoute("contact-us"))}
             className="hidden  sm:inline-flex hover:animate-pulsing hover:animate-iteration-count-infinite"
             variant="outline"
           >

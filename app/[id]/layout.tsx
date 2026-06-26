@@ -1,19 +1,18 @@
-"use client"
 import Navbar from "@/components/navbar";
 import Footer1 from "@/components/footer-1";
 import AOSInit from "@/components/init-aos";
 import { Suspense } from "react";
 import WhatsAppButton from "@/components/whatsapp-button";
 import ThemeMode from "@/components/change-theme";
-import { GymProvider, useGym } from "@/context/use-gym";
+import { GymProvider } from "@/context/use-gym";
+
+export const dynamic = 'force-dynamic';
 
 const Layout = ({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) => {
-    const { loading } = useGym();
-    if (loading) return null;
     return (
         <div>
             <Suspense fallback={null}>

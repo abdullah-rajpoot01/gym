@@ -1,11 +1,10 @@
 import { Button } from './ui/button';
 import Link from 'next/link';
-import { createQuery } from '@/lib/create-query';
 import { useGym } from '@/context/use-gym';
 
 const Stats = () => {
   const gymParams = useGym();
-  const { gymName, phone, } = gymParams;
+  const { gymName, phone, id, createRoute } = gymParams;
   return (
     <section id="coach" className=" py-16 md:py-24 px-4">
       <div className=" grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
@@ -71,7 +70,7 @@ const Stats = () => {
               <Button> Call Now</Button>
             </Link>
             <Link
-              href={`/contact-us${createQuery(gymParams)}`}
+              href={createRoute("contact-us")}
             >
               <Button variant={"outline"}> Ask About Coaching</Button>
             </Link>

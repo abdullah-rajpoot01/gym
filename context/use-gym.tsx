@@ -1,14 +1,15 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { notFound, useParams, useSearchParams } from "next/navigation";
 import { Lead } from "@/types/lead";
 
 type GymContextType = {
   loading: boolean;
   id: string | null;
 
-  hasData: boolean;
+
+  leadNotFound: boolean;
 
   gymName: string;
   email: string;
@@ -19,7 +20,7 @@ type GymContextType = {
 
   googleMapPinUrl: string;
   googleMapShareLink: string;
-
+  createRoute: (route: string) => string;
   mode: string;
 };
 
@@ -27,29 +28,35 @@ const GymContext = createContext<GymContextType | null>(null);
 
 export function GymProvider({ children }: { children: React.ReactNode }) {
   const searchParams = useSearchParams();
-  const id = searchParams.get("id");
+  const params = useParams();
+  const id = params.id as string;
 
   const [lead, setLead] = useState<Lead | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [leadNotFound, setLeadNotFound] = useState(false);
 
   useEffect(() => {
     if (!id) return;
 
     const getLead = async () => {
       try {
-        setLoading(true); 
+        setLoading(true);
+        setLeadNotFound(false);
 
         const response = await fetch(
           `https://gym-leads-with-sveltia-cms.pages.dev/content/leads/${id}.json`
         );
 
-
-        if (!response.ok) throw new Error("Failed to fetch lead");
+        if (!response.ok) {
+          setLeadNotFound(true);
+          return;
+        }
 
         const data: Lead = await response.json();
         setLead(data);
       } catch (error) {
         console.error("Error fetching lead:", error);
+        setLeadNotFound(true);
       } finally {
         setLoading(false);
       }
@@ -58,26 +65,28 @@ export function GymProvider({ children }: { children: React.ReactNode }) {
     getLead();
   }, [id]);
 
+  const createRoute = (route: string) => {
+    const query = searchParams.toString();
+
+    return `/${id}/${route}${query ? `?${query}` : ""}`;
+  };
+
   const value: GymContextType = {
     loading,
     id,
 
-    hasData: !!lead,
+    leadNotFound,
 
-    gymName: lead?.name || searchParams.get("name") || "Your Fitness ",
+    gymName: lead?.name || "Your Fitness",
     email: lead?.email || `${lead?.name || "gym"}@gmail.com`,
-    phone: lead?.mobiles?.[0] || searchParams.get("phone") || "92 300 0000000",
-    whatsapp:
-      lead?.whatsapp ||
-      lead?.mobiles?.[0] ||
-      searchParams.get("phone") ||
-      "92 300 0000000",
+    phone: lead?.mobiles?.[0] ?? "92 300 0000000",
+    whatsapp: lead?.whatsapp || lead?.mobiles?.[0] || "92 300 0000000",
 
-    city: lead?.city || searchParams.get("city") || "Multan",
+    city: lead?.city || "Multan",
 
     address:
       lead?.detail?.address ||
-      `XYZ Street Sectore 2 Phase 2 , ${lead?.city || "Multan"}`,
+      `XYZ Street Sector 2 Phase 2, ${lead?.city || "Your City"}`,
 
     googleMapPinUrl:
       lead?.detail?.googleMapPinUrl ||
@@ -86,17 +95,30 @@ export function GymProvider({ children }: { children: React.ReactNode }) {
     googleMapShareLink:
       lead?.detail?.googleMapShareLink ||
       "https://share.google/QqrDdwCNao5wRTUKp",
-
+    createRoute,
     mode: searchParams.get("mode") || "light",
   };
 
-  return <GymContext.Provider value={value}>{children}</GymContext.Provider>;
+  if (loading) {
+    return null;
+  }
+  if (leadNotFound) {
+    notFound()
+  }
+
+  return (
+    <GymContext.Provider value={value}>
+      {children}
+    </GymContext.Provider>
+  );
 }
 
 export function useGym() {
   const context = useContext(GymContext);
+
   if (!context) {
     throw new Error("useGym must be used within GymProvider");
   }
+
   return context;
 }

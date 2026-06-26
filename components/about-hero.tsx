@@ -2,13 +2,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import CarouselWithFooter from "./carousel-07";
 import Typewriter from "./typewriter";
-import { createQuery } from "@/lib/create-query";
 import { useGym } from "@/context/use-gym";
 
 
 export default function AboutHeroSection() {
-    const gymParams = useGym();
-    const { gymName, phone, city } = gymParams;
+    const { gymName, phone, city, id, createRoute } = useGym();
 
     return (
         <section className="pt-20 pb-8 px-4 md:px-8 min-h-screen">
@@ -34,7 +32,7 @@ export default function AboutHeroSection() {
                             <Button> Call Now</Button>
                         </Link>
                         <Link
-                            href={`/contact-us${createQuery(gymParams)}`}
+                            href={createRoute("contact-us")}
                         >
                             <Button variant={"outline"}>Contact Us</Button>
                         </Link>

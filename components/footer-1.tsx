@@ -1,18 +1,18 @@
 "use client"
 import Link from "next/link";
-import { createQuery } from "@/lib/create-query";
 import { ArrowRight, Clock, Dumbbell, Mail, MapPin, Phone } from "lucide-react";
 import { useGym } from "@/context/use-gym";
 
 
 const Footer1 = () => {
   const gymParams = useGym();
-  const { gymName, phone, city, address, googleMapShareLink, email, loading } = gymParams;
-  const linkSections = [{ label: "Home", url: `/${createQuery(gymParams)}` },
-  { label: "Programs", url: `/programs${createQuery(gymParams)}` },
-  { label: "Coaches", url: `/coaches${createQuery(gymParams)}` },
-  { label: "Pricing", url: `/pricing${createQuery(gymParams)}` },
-  { label: "Testimonials", url: `/testimonials${createQuery(gymParams)}` }
+
+  const { gymName, phone, city, address, googleMapShareLink, email, id ,createRoute} = gymParams;
+  const linkSections = [{ label: "Home", url: createRoute("") },
+  { label: "Programs", url: createRoute("programs") },
+  { label: "Coaches", url: createRoute("coaches") },
+  { label: "Pricing", url: createRoute("pricing") },
+  { label: "Testimonials", url: createRoute("testimonials") }
   ];
 
 
@@ -22,7 +22,7 @@ const Footer1 = () => {
       <div className="site-container py-14 px-8 text-sm text-foreground md:py-18">
         <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr_1.25fr_1fr]">
           <div>
-            <Link href={`/${createQuery(gymParams)}`} className="flex items-center gap-3">
+            <Link href={createRoute("")} className="flex items-center gap-3">
 
               <div className="relative w-8 h-8 flex justify-center items-center aspect-square rounded-lg shadow-lg border-2 border-foreground/80 overflow-hidden">
                 <Dumbbell className="w-6 h-6" />

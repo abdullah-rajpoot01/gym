@@ -1,15 +1,11 @@
 import {
   ArrowUpRightIcon,
   BinocularsIcon,
-  CogIcon,
   Dumbbell,
   Grid2x2,
-  Grid2X2,
-  ShieldCheckIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { createQuery } from "@/lib/create-query";
 import { useGym } from "@/context/use-gym";
 
 const plusPoints = [
@@ -32,7 +28,7 @@ const plusPoints = [
 ];
 
 export default function Features() {
-  const gymParams = useGym();
+  const { createRoute } = useGym();
   return (
     <div
       className="mx-auto max-w-(--breakpoint-xl) px-4 py-24 text-center"
@@ -44,7 +40,7 @@ export default function Features() {
       <h2 className="mx-auto mt-5 max-w-4xl text-balance font-medium text-3xl/tight tracking-[-0.04em] sm:text-[2.75rem]">
         <strong className="text-primary"> Choose your</strong> Training Path
       </h2>
-      <p className="mt-5 text-muted-foreground text-xl -tracking-[0.01em] sm:text-2xl">
+      <p className="mt-5 text-muted-foreground text-xl tracking-[-0.01em] sm:text-2xl">
         Discover programs designed to build strength, improve endurance, and help you achieve your fitness goals.
       </p>
 
@@ -52,7 +48,7 @@ export default function Features() {
         {plusPoints.map((plusPoint) => (
           <div
             className="relative w-full overflow-hidden  border bg-linear-to-b from-foreground/3 px-6 py-10 sm:max-w-xs transition-all duration-200 hover:scale-[1.04] hover:border hover:border-primary hover:shadow-[0_0_30px_10px_var(--primary)] shadow-primary/10"
-            data-aos="flip-right"
+            data-aos="fade-right"
             key={plusPoint.title}
           >
             <BackgroundPattern />
@@ -65,7 +61,7 @@ export default function Features() {
               <p className="text-balance text-base text-muted-foreground">
                 {plusPoint.description}
               </p>
-              <Link href={`/contact-us${createQuery(gymParams)}`}>
+              <Link href={createRoute("contact-us")}>
                 <Button className="mt-6">
                   Learn More <ArrowUpRightIcon />
                 </Button>
