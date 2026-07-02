@@ -1,5 +1,5 @@
 "use client"
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUp, Clock, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { useGym } from "@/context/use-gym";
@@ -134,7 +134,7 @@ const Contact = () => {
                                 <MapPin className=" size-5" /></Button>
                         </Link>
                     </div>
-                    <div className="overflow-hidden rounded-lg border border-foreground/10 bg-black">
+                    <div className="overflow-hidden relative rounded-lg border border-foreground/10 bg-black">
 
                         <iframe
                             src={googleMapPinUrl}
@@ -146,6 +146,16 @@ const Contact = () => {
                             title="Iron Heaven location map"
                             style={{ border: 0, minHeight: 620 }}
                         />
+                        <Link className="absolute inset-0 bg-black/5 z-10" href={googleMapShareLink} />
+                        <div className="absolute bottom-0 sm:bottom-2 max-w-full sm:max-w-[80%]  border border-primary/25 bg-black/80 px-4 py-3 text-sm z-5">
+                            <div className="font-heading font-black uppercase text-white text-sm">
+                                {address}
+                            </div>
+                            <div className="text-[10px] font-black uppercase tracking-[0.2em] text-primary flex gap-2  items-center">
+                                Health / Fitness <ArrowUp className='size-4  rotate-30' />
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>

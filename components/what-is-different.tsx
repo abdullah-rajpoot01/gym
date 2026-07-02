@@ -14,7 +14,7 @@ const WhatTakeUsApart = () => {
                     best self.
                 </p>
                 <div className="grid md:grid-cols-3 gap-8 mt-16">
-                    <div className="group relative text-center">
+                    <div data-aos="fade-right" className="group relative text-center">
                         <div className="overflow-hidden relative h-64">
                             <img
                                 src="/gym/pexels-jonathanborba-13885345.jpg"
@@ -32,7 +32,7 @@ const WhatTakeUsApart = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="group relative text-center">
+                    <div data-aos="fade-right" className="group relative text-center">
                         <div className="overflow-hidden  relative h-64">
                             <img
                                 src="/gym/pexels-foadshariyati-30672398.jpg"
@@ -50,7 +50,7 @@ const WhatTakeUsApart = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="group relative text-center">
+                    <div data-aos="fade-right" className="group relative text-center">
                         <div className="overflow-hidden  relative h-64">
                             <img
                                 src="/gym/pexels-fernando-capetillo-94107723-38167588.jpg"

@@ -1,4 +1,3 @@
-import { Verified } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import CarouselWithFooter from "./carousel-07";
@@ -43,6 +42,7 @@ export default function HeroSection() {
                 </div>
                 <div className="relative overflow-hidden max-w-md lg:aspect-square mx-auto border border-foreground/10 bg-black ">
                     <CarouselWithFooter />
+
                     <div className="absolute inset-0 bg-black/30 z-5" />
 
 
@@ -54,6 +54,8 @@ export default function HeroSection() {
                             Health / Fitness
                         </div>
                     </div>
+
+                    
                 </div>
             </div>
         </section>
