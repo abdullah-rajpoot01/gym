@@ -44,7 +44,7 @@ const teamMembers = [
 
 const Team = () => {
     return (
-        <div  className="mx-auto max-w-7xl px-6 py-20">
+        <div  className="mx-auto max-w-7xl px-6 py-20 overflow-x-hidden">
             <h2  className="text-balance text-center font-medium text-3xl tracking-[-0.04em] sm:text-4xl md:text-[2.75rem]">
                 Our <strong className="text-primary">Leading Team</strong>
             </h2>

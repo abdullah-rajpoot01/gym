@@ -7,7 +7,7 @@ const Location = () => {
   const { gymName, phone, googleMapShareLink, googleMapPinUrl, loading, address, email } = useGym();
   if (loading) return null;
   return (
-    <section className="py-16 md:py-24 px-4">
+    <section className="py-16 md:py-24 px-4 overflow-x-hidden">
       <div className="site-container grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <div data-aos="fade-right">
           <div className="bg-primary/20 max-w-35 text-center rounded-full text-primary border border-primary/80">Location</div>
