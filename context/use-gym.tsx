@@ -45,7 +45,7 @@ export function GymProvider({ children }: { children: React.ReactNode }) {
         setLeadNotFound(false);
 
         const response = await fetch(
-          `https://gym-leads-with-sveltia-cms.pages.dev/content/leads/${id}.json`
+          `https://gym-leads-with-sveltia-cms.pages.dev/leads/${id}.json`
         );
 
         if (!response.ok) {
