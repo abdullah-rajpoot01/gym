@@ -25,7 +25,7 @@ export async function generateMetadata({
 
   try {
     const response = await fetch(
-      `https://gym-leads-with-sveltia-cms.pages.dev/leads/${id}.json`,
+      `https://gym-leads-with-sveltia-cms.pages.dev/content/leads/${id}.json`,
       {
         next: {
           revalidate: 3600,
