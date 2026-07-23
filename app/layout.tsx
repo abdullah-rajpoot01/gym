@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
+export const runtime = 'edge';
 export default function RootLayout({
   children,
 }: Readonly<{
