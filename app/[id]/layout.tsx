@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import WhatsAppButton from "@/components/whatsapp-button";
 import ThemeMode from "@/components/change-theme";
 import { GymProvider } from "@/context/use-gym";
-export const runtime = 'edge';
+
 export const dynamic = 'force-dynamic';
 export const revalidate = 86400;
 
